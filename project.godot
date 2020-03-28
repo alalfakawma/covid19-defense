@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Covid19 Defense"
+run/main_scene="res://Main Menu.tscn"
 
 [gdnative]
 
