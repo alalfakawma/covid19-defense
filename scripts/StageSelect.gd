@@ -44,6 +44,7 @@ func _stage_select_back():
     node.disabled = false # Enable mode button
     for n in stageNodes:
         $Tween.interpolate_property(n, "rect_position", n.rect_position, tweenReturnPos[stageNodes.find(n)], tweenDuration, Tween.TRANS_BACK)
+        n.get_parent().z_index = 1
     $Tween.start()
     self.emit_signal("destroy_data")
     pass
