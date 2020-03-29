@@ -1,17 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/start.png" type="Texture" id=1]
 [ext_resource path="res://assets/start_press.png" type="Texture" id=2]
 [ext_resource path="res://assets/exit.png" type="Texture" id=3]
 [ext_resource path="res://assets/exit_press.png" type="Texture" id=4]
 [ext_resource path="res://scripts/VBoxContainer.gd" type="Script" id=5]
-[ext_resource path="res://scripts/ExitButton.gd" type="Script" id=6]
 [ext_resource path="res://assets/settings.png" type="Texture" id=7]
 [ext_resource path="res://assets/settings_press.png" type="Texture" id=8]
 [ext_resource path="res://assets/sounds/ButtonSelect.ogg" type="AudioStream" id=9]
-[ext_resource path="res://scripts/ButtonSelectSound.gd" type="Script" id=10]
 [ext_resource path="res://assets/menu_logo.png" type="Texture" id=11]
 [ext_resource path="res://assets/fonts/Atarian/SF Atarian System Extended Bold.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://scenes/MainBG.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -22,16 +21,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Background" type="ColorRect" parent="."]
-margin_left = 2.33884
-margin_top = 0.127243
-margin_right = 1026.34
-margin_bottom = 600.127
-color = Color( 0.192157, 0.215686, 0.447059, 1 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="Background" parent="." instance=ExtResource( 13 )]
+margin_top = 0.127258
 
 [node name="Footer" type="Label" parent="."]
 margin_left = 346.945
@@ -45,9 +36,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 179.023
+margin_left = 177.265
 margin_top = 109.307
-margin_right = 1253.02
+margin_right = 1251.26
 margin_bottom = 283.307
 rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 11 )
@@ -72,7 +63,6 @@ __meta__ = {
 [node name="ButtonSelectSound" type="AudioStreamPlayer2D" parent="VBoxContainer"]
 position = Vector2( -419.583, -236.622 )
 stream = ExtResource( 9 )
-script = ExtResource( 10 )
 
 [node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 margin_right = 159.0
@@ -96,10 +86,6 @@ margin_right = 159.0
 margin_bottom = 187.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
-script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/ButtonSelectSound" method="_play_sound"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="VBoxContainer/ButtonSelectSound" method="_play_sound"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ButtonSelectSound" method="_play_sound"]
