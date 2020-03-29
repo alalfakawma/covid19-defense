@@ -20,6 +20,7 @@ func _play_button_sound():
 
 func _start_button_pressed():
     self._play_button_sound()
+    get_tree().change_scene("res://scenes/StageSelect.tscn")
 
 func _settings_button_pressed():
     self._play_button_sound()

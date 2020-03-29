@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/MainLayout.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/exit.png" type="Texture" id=2]
+[ext_resource path="res://scripts/StageContainer.gd" type="Script" id=3]
 
 [node name="StageSelect" type="Node2D"]
 
@@ -8,5 +10,50 @@
 
 [node name="Title" parent="MainLayout" index="1"]
 text = "Stage Select"
+
+[node name="StageContainer" type="HBoxContainer" parent="."]
+margin_left = 73.0
+margin_top = 302.413
+margin_right = 932.0
+margin_bottom = 428.413
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stage" type="TextureRect" parent="StageContainer"]
+margin_right = 159.0
+margin_bottom = 126.0
+rect_pivot_offset = Vector2( -192.213, 172.015 )
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="StageData" type="VSplitContainer" parent="StageContainer/Stage"]
+anchor_left = 0.0162561
+anchor_right = 0.0162561
+margin_left = 186.0
+margin_top = 4.0
+margin_right = 334.654
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="StageContainer/Stage/StageData"]
+margin_right = 148.654
+margin_bottom = 14.0
+text = "Test Text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="StageContainer/Stage/StageData"]
+margin_top = 26.0
+margin_right = 148.654
+margin_bottom = 40.0
+text = "Test description"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="MainLayout"]

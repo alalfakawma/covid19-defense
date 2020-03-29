@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Vairengte",
+        "locked": false,
+        "missions": [
+            {
+                "minScore": 2000
+            }
+        ]
+    },
+    {
+        "name": "Lengpui Airport",
+        "locked": true,
+        "missions": [
+            {
+                "minScore": 3500
+            }
+        ]
+    }
+]
