@@ -5,9 +5,10 @@ signal destroy_data
 
 enum stages { VAIRENGTE, LENGPUI }
 var stageData
-onready var stageNodes = [$Vairengte, $Lengpui]
+onready var stageNodes = [$VairengteNode/Vairengte, $LengpuiNode/Lengpui]
 var currentStage
-var tweenReturnPos
+var tweenReturnPos = []
+var tweenDuration = 1
 
 func _ready():
     # Connect to StageData to set the labels
@@ -23,32 +24,26 @@ func _ready():
         n.connect("pressed", self, "_stage_button_pressed", [n])
 
 func _stage_button_pressed(node):
-    var id = node.stageId
     currentStage = node.stageId
+    node.disabled = true # Disable node button
+    node.get_parent().z_index = 2 # Set node above other nodes
     var tweenPos = $TweenPosition.position
-    tweenReturnPos = stageNodes[id].get_node("Position2D").get_global_transform().origin
-    $Tween.interpolate_property(stageNodes[id], "rect_position", stageNodes[id].rect_position, tweenPos, 1, Tween.TRANS_BACK)
     for n in stageNodes:
-        if n.stageId != id:
-            $Tween.interpolate_property(n, "visible", true, false, 1, Tween.TRANS_BACK)       
-            $Tween.start()
-    match id:
+        $Tween.interpolate_property(n, "rect_position", n.rect_position, tweenPos, tweenDuration, Tween.TRANS_BACK) # Move all nodes to the left
+        tweenReturnPos.append(n.get_node("Position2D").get_global_transform().origin)
+    match node.stageId:
         stages.VAIRENGTE:
-            self.emit_signal("set_data", stageData[id])
+            self.emit_signal("set_data", stageData[node.stageId])
             $Tween.start()
         stages.LENGPUI:
-            self.emit_signal("set_data", stageData[id])
+            self.emit_signal("set_data", stageData[node.stageId])
             $Tween.start()
-            
-
 
 func _stage_select_back():
     var node = stageNodes[currentStage]
-    $Tween.interpolate_property(node, "rect_position", node.rect_position, tweenReturnPos, 1, Tween.TRANS_BACK)
-    $Tween.start()
+    node.disabled = false # Enable mode button
     for n in stageNodes:
-        if n.stageId != currentStage:
-            $Tween.interpolate_property(n, "visible", false, true, 1, Tween.TRANS_BACK)       
-            $Tween.start()
+        $Tween.interpolate_property(n, "rect_position", n.rect_position, tweenReturnPos[stageNodes.find(n)], tweenDuration, Tween.TRANS_BACK)
+    $Tween.start()
     self.emit_signal("destroy_data")
     pass

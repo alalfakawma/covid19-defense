@@ -67,7 +67,11 @@ margin_right = 342.0
 margin_bottom = 20.0
 text = "Back"
 
-[node name="Vairengte" type="TextureButton" parent="."]
+[node name="VairengteNode" type="Node2D" parent="."]
+position = Vector2( 0.00012207, 0.00012207 )
+scale = Vector2( 1, 1 )
+
+[node name="Vairengte" type="TextureButton" parent="VairengteNode"]
 margin_left = 232.8
 margin_top = 318.0
 margin_right = 592.8
@@ -80,10 +84,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Position2D" type="Position2D" parent="Vairengte"]
+[node name="Position2D" type="Position2D" parent="VairengteNode/Vairengte"]
 position = Vector2( 3.05176e-05, 0 )
 
-[node name="Lengpui" type="TextureButton" parent="."]
+[node name="LengpuiNode" type="Node2D" parent="."]
+
+[node name="Lengpui" type="TextureButton" parent="LengpuiNode"]
 margin_left = 519.8
 margin_top = 318.0
 margin_right = 879.8
@@ -97,7 +103,7 @@ __meta__ = {
 }
 stageId = 1
 
-[node name="Position2D" type="Position2D" parent="Lengpui"]
+[node name="Position2D" type="Position2D" parent="LengpuiNode/Lengpui"]
 [connection signal="pressed" from="StageData/HBoxContainer/Back" to="." method="_stage_select_back"]
 
 [editable path="MainLayout"]
