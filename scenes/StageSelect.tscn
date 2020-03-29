@@ -1,61 +1,104 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/MainLayout.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/stage_vairengte.png" type="Texture" id=2]
-[ext_resource path="res://scripts/StageContainer.gd" type="Script" id=3]
+[ext_resource path="res://scripts/StageSelect.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Stage.gd" type="Script" id=4]
+[ext_resource path="res://scripts/StageData.gd" type="Script" id=5]
 
 [node name="StageSelect" type="Node2D"]
 position = Vector2( -2, 0 )
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
+playback_process_mode = 0
+
+[node name="TweenPosition" type="Position2D" parent="."]
+position = Vector2( 83.3089, 318 )
 
 [node name="MainLayout" parent="." instance=ExtResource( 1 )]
 
 [node name="Title" parent="MainLayout" index="1"]
 text = "Stage Select"
 
-[node name="StageContainer" type="Container" parent="."]
-margin_left = 85.3066
-margin_top = 298.484
-margin_right = 445.307
-margin_bottom = 501.484
-rect_scale = Vector2( 0.7, 0.7 )
-script = ExtResource( 3 )
+[node name="StageData" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 376.0
+margin_top = 318.0
+margin_right = 889.0
+margin_bottom = 461.0
+custom_constants/separation = 40
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Stage" type="TextureButton" parent="StageContainer"]
-margin_right = 360.0
-margin_bottom = 203.0
-rect_pivot_offset = Vector2( -192.213, 172.015 )
+[node name="Name" type="Label" parent="StageData"]
+margin_right = 513.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="StageData"]
+margin_top = 54.0
+margin_right = 513.0
+margin_bottom = 68.0
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StageData"]
+margin_top = 108.0
+margin_right = 513.0
+margin_bottom = 128.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Start" type="Button" parent="StageData/HBoxContainer"]
+margin_left = 171.0
+margin_right = 250.0
+margin_bottom = 20.0
+text = "Start Stage"
+
+[node name="Back" type="Button" parent="StageData/HBoxContainer"]
+margin_left = 300.0
+margin_right = 342.0
+margin_bottom = 20.0
+text = "Back"
+
+[node name="Vairengte" type="TextureButton" parent="."]
+margin_left = 232.8
+margin_top = 318.0
+margin_right = 592.8
+margin_bottom = 521.0
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 2 )
 stretch_mode = 1
 script = ExtResource( 4 )
-
-[node name="StageData" type="VBoxContainer" parent="StageContainer/Stage"]
-margin_left = 186.0
-margin_top = 4.0
-margin_right = 289.0
-margin_bottom = 44.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="StageContainer/Stage/StageData"]
-margin_right = 103.0
-margin_bottom = 14.0
-text = "Test Text"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Position2D" type="Position2D" parent="Vairengte"]
+position = Vector2( 3.05176e-05, 0 )
 
-[node name="Description" type="Label" parent="StageContainer/Stage/StageData"]
-margin_top = 18.0
-margin_right = 103.0
-margin_bottom = 32.0
-text = "Test description"
+[node name="Lengpui" type="TextureButton" parent="."]
+margin_left = 519.8
+margin_top = 318.0
+margin_right = 879.8
+margin_bottom = 521.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 2 )
+stretch_mode = 1
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+stageId = 1
+
+[node name="Position2D" type="Position2D" parent="Lengpui"]
+[connection signal="pressed" from="StageData/HBoxContainer/Back" to="." method="_stage_select_back"]
 
 [editable path="MainLayout"]

@@ -23,6 +23,7 @@
     {
         "name": "Lengpui Airport",
         "locked": true,
+        "description": "Lengpui Airport hi veng tawp teh",
         "missions": [
             {
                 "minScore": 3500,
