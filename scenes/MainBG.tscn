@@ -1,9 +1,9 @@
 [gd_scene format=2]
 
 [node name="Background" type="ColorRect"]
-margin_left = 2.33884
+margin_left = 0.33884
 margin_top = 0.127243
-margin_right = 1026.34
+margin_right = 1024.34
 margin_bottom = 600.127
 color = Color( 0.254902, 0.278431, 0.509804, 1 )
 __meta__ = {
