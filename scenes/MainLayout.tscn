@@ -12,9 +12,9 @@
 
 [node name="Title" type="Label" parent="."]
 margin_left = 343.564
-margin_top = 125.584
+margin_top = 109.584
 margin_right = 665.564
-margin_bottom = 177.583
+margin_bottom = 161.583
 custom_fonts/font = ExtResource( 2 )
 text = "Title"
 align = 1

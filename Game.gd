@@ -4,6 +4,7 @@ var stageData
 var currentNode
 var currentStageData
 var sceneHistory = [2, 3]
+var guiTweenDuration = 0.5
 enum stages { VAIRENGTE, LENGPUI }
 
 func change_scene(scene):

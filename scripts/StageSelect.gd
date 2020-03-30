@@ -5,7 +5,6 @@ signal destroy_data
 
 onready var stageNodes = [$Vairengte, $Lengpui]
 var tweenReturnPos = []
-var tweenDuration = 1
 
 func _ready():
     # Connect to StageData to set the labels
@@ -25,10 +24,10 @@ func _stage_button_pressed(node):
     var tweenPos = $TweenPosition.position
     for n in stageNodes:
         n.disabled = true
-        $Tween.interpolate_property(n, "rect_position", n.rect_position, tweenPos, tweenDuration, Tween.TRANS_LINEAR) # Move all nodes to the left
+        $Tween.interpolate_property(n, "rect_position", n.rect_position, tweenPos, Game.guiTweenDuration, Tween.TRANS_LINEAR) # Move all nodes to the left
         if n.stageId != node.stageId:
-            $Tween.interpolate_property(n, "modulate:a", n.modulate.a, 0, tweenDuration, Tween.TRANS_LINEAR) # Hide non-active nodes
-            $Tween.interpolate_callback(n, 0.75, "_toggle_visible", "hide")
+            $Tween.interpolate_property(n, "modulate:a", n.modulate.a, 0, Game.guiTweenDuration, Tween.TRANS_LINEAR) # Hide non-active nodes
+            $Tween.interpolate_callback(n, 0.25, "_toggle_visible", "hide")
         tweenReturnPos.append(n.get_node("Position2D").get_global_transform().origin)
     match node.stageId:
         Game.stages.VAIRENGTE:
@@ -41,11 +40,12 @@ func _stage_button_pressed(node):
 func _stage_select_back():
     var node = Game.currentNode
     for n in stageNodes:
-        n.disabled = false
-        $Tween.interpolate_property(n, "rect_position", n.rect_position, tweenReturnPos[stageNodes.find(n)], tweenDuration, Tween.TRANS_LINEAR)
+        if (!Game.stageData[n.stageId].locked):
+            n.disabled = false
+        $Tween.interpolate_property(n, "rect_position", n.rect_position, tweenReturnPos[stageNodes.find(n)], Game.guiTweenDuration, Tween.TRANS_LINEAR)
         if n.stageId != node.stageId:
             n._toggle_visible("show")
-            $Tween.interpolate_property(n, "modulate:a", n.modulate.a, 1, tweenDuration, Tween.TRANS_LINEAR)
+            $Tween.interpolate_property(n, "modulate:a", n.modulate.a, 1, Game.guiTweenDuration, Tween.TRANS_LINEAR)
     $Tween.start()
     self.emit_signal("destroy_data")
     pass

@@ -15,4 +15,3 @@ func _toggle_visible(toggle):
 func _parent_ready():
     if Game.stageData[stageId].locked:
         self.disabled = true
-    
