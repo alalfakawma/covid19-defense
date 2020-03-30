@@ -18,17 +18,20 @@ font_data = ExtResource( 2 )
 
 [node name="MainMenu" type="Node2D"]
 __meta__ = {
-"_edit_lock_": true
+"_edit_lock_": true,
+"_edit_vertical_guides_": [ 479.637 ]
 }
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
 margin_top = 0.127258
+margin_right = 960.339
+margin_bottom = 540.127
 
 [node name="Footer" type="Label" parent="."]
-margin_left = 346.945
-margin_top = 561.185
-margin_right = 667.945
-margin_bottom = 582.185
+margin_left = 318.945
+margin_top = 487.326
+margin_right = 639.945
+margin_bottom = 508.326
 custom_fonts/font = SubResource( 1 )
 text = "Project By: Jonathan and Aseem."
 __meta__ = {
@@ -36,10 +39,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 177.265
-margin_top = 109.307
-margin_right = 1251.26
-margin_bottom = 283.307
+margin_left = 157.626
+margin_top = 112.099
+margin_right = 1231.63
+margin_bottom = 286.099
 rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -49,10 +52,10 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 0.676
 anchor_bottom = 0.581
-margin_left = 419.583
+margin_left = 398.944
 margin_top = 236.622
-margin_right = 578.583
-margin_bottom = 399.622
+margin_right = 557.944
+margin_bottom = 423.622
 custom_constants/separation = 20
 alignment = 1
 script = ExtResource( 8 )

@@ -9,12 +9,14 @@
 [node name="MainLayout" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
+margin_right = 960.339
+margin_bottom = 540.127
 
 [node name="Title" type="Label" parent="."]
-margin_left = 343.564
-margin_top = 109.584
-margin_right = 665.564
-margin_bottom = 161.583
+margin_left = 287.564
+margin_top = 125.0
+margin_right = 609.564
+margin_bottom = 176.999
 custom_fonts/font = ExtResource( 2 )
 text = "Title"
 align = 1
@@ -24,9 +26,9 @@ __meta__ = {
 }
 
 [node name="SceneBackButton" type="TextureButton" parent="."]
-margin_left = 7.0
+margin_left = 4.0
 margin_top = 24.0
-margin_right = 166.0
+margin_right = 163.0
 margin_bottom = 73.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )

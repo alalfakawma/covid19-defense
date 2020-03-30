@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/maptest.png" type="Texture" id=1]
+[ext_resource path="res://assets/virus/level1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.8, 10.8 )
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VirusSpawner" type="Position2D" parent="."]
+position = Vector2( 25.3474, 239.911 )
+
+[node name="Virus" type="Area2D" parent="."]
+position = Vector2( 42.3581, 238.793 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Virus"]
+position = Vector2( -0.163269, 0.0340271 )
+rotation = -1.5708
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Virus"]
+position = Vector2( 1.90735e-06, 1.52588e-05 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]

@@ -5,16 +5,21 @@
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_vertical_guides_": [ 479.925 ]
+}
 
 [node name="MainLayout" parent="." instance=ExtResource( 1 )]
 
 [node name="Title" parent="MainLayout" index="1"]
+margin_left = 318.564
+margin_right = 640.564
 text = "Level Select"
 
 [node name="Level1" type="Button" parent="."]
-margin_left = 290.854
+margin_left = 272.876
 margin_top = 319.329
-margin_right = 330.854
+margin_right = 312.876
 margin_bottom = 359.329
 text = "1"
 __meta__ = {
@@ -22,9 +27,9 @@ __meta__ = {
 }
 
 [node name="Level2" type="Button" parent="."]
-margin_left = 477.058
+margin_left = 459.08
 margin_top = 319.329
-margin_right = 517.058
+margin_right = 499.08
 margin_bottom = 359.329
 disabled = true
 text = "2"
@@ -33,9 +38,9 @@ __meta__ = {
 }
 
 [node name="Level3" type="Button" parent="."]
-margin_left = 655.486
+margin_left = 637.508
 margin_top = 319.329
-margin_right = 695.486
+margin_right = 677.508
 margin_bottom = 359.329
 disabled = true
 text = "3"
