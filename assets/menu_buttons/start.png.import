@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exit_press.png-e6de6ac061161c97e14dcb49d73b89a5.stex"
+path="res://.import/start.png-15c58a1dcdcbb9c3f525378107fde788.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/exit_press.png"
-dest_files=[ "res://.import/exit_press.png-e6de6ac061161c97e14dcb49d73b89a5.stex" ]
+source_file="res://assets/menu_buttons/start.png"
+dest_files=[ "res://.import/start.png-15c58a1dcdcbb9c3f525378107fde788.stex" ]
 
 [params]
 

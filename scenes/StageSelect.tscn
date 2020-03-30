@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/MainLayout.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/stage_vairengte.png" type="Texture" id=2]
@@ -6,6 +6,23 @@
 [ext_resource path="res://scripts/Stage.gd" type="Script" id=4]
 [ext_resource path="res://scripts/StageData.gd" type="Script" id=5]
 [ext_resource path="res://assets/stage_vairengte_black.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Atarian/SF Atarian System Extended.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/fonts/Atarian/SF Atarian System Extended Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/start_press.png" type="Texture" id=9]
+[ext_resource path="res://assets/start.png" type="Texture" id=10]
+[ext_resource path="res://assets/back.png" type="Texture" id=11]
+[ext_resource path="res://assets/back_press.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 7 )
 
 [node name="StageSelect" type="Node2D"]
 position = Vector2( -2, 0 )
@@ -15,7 +32,7 @@ script = ExtResource( 3 )
 playback_process_mode = 0
 
 [node name="TweenPosition" type="Position2D" parent="."]
-position = Vector2( 108.309, 318 )
+position = Vector2( 142.987, 318 )
 
 [node name="MainLayout" parent="." instance=ExtResource( 1 )]
 
@@ -23,10 +40,11 @@ position = Vector2( 108.309, 318 )
 text = "Stage Select"
 
 [node name="StageData" type="VBoxContainer" parent="."]
-margin_left = 401.0
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 415.0
 margin_top = 318.0
-margin_right = 914.0
-margin_bottom = 461.0
+margin_right = 928.0
+margin_bottom = 465.0
 custom_constants/separation = 40
 script = ExtResource( 5 )
 __meta__ = {
@@ -35,47 +53,49 @@ __meta__ = {
 
 [node name="Name" type="Label" parent="StageData"]
 margin_right = 513.0
-margin_bottom = 14.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+text = "Name"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Description" type="Label" parent="StageData"]
-margin_top = 54.0
+margin_top = 70.0
 margin_right = 513.0
-margin_bottom = 68.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "Description"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="StageData"]
-margin_top = 108.0
+margin_top = 127.0
 margin_right = 513.0
-margin_bottom = 128.0
+margin_bottom = 176.0
 custom_constants/separation = 50
 alignment = 1
 
-[node name="Start" type="Button" parent="StageData/HBoxContainer"]
-margin_left = 171.0
-margin_right = 250.0
-margin_bottom = 20.0
-text = "Start Stage"
+[node name="Start" type="TextureButton" parent="StageData/HBoxContainer"]
+margin_left = 72.0
+margin_right = 231.0
+margin_bottom = 49.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
 
-[node name="Back" type="Button" parent="StageData/HBoxContainer"]
-margin_left = 300.0
-margin_right = 342.0
-margin_bottom = 20.0
-text = "Back"
+[node name="Back" type="TextureButton" parent="StageData/HBoxContainer"]
+margin_left = 281.0
+margin_right = 440.0
+margin_bottom = 49.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
 
-[node name="VairengteNode" type="Node2D" parent="."]
-position = Vector2( 0.00012207, 0.00012207 )
-scale = Vector2( 1, 1 )
-
-[node name="Vairengte" type="TextureButton" parent="VairengteNode"]
-margin_left = 232.8
+[node name="Vairengte" type="TextureButton" parent="."]
+margin_left = 238.119
 margin_top = 318.0
-margin_right = 592.8
+margin_right = 598.119
 margin_bottom = 521.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 2 )
@@ -85,15 +105,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Position2D" type="Position2D" parent="VairengteNode/Vairengte"]
+[node name="Position2D" type="Position2D" parent="Vairengte"]
 position = Vector2( 3.05176e-05, 0 )
 
-[node name="LengpuiNode" type="Node2D" parent="."]
-
-[node name="Lengpui" type="TextureButton" parent="LengpuiNode"]
-margin_left = 519.8
+[node name="Lengpui" type="TextureButton" parent="."]
+margin_left = 554.478
 margin_top = 318.0
-margin_right = 879.8
+margin_right = 914.478
 margin_bottom = 521.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 6 )
@@ -104,7 +122,7 @@ __meta__ = {
 }
 stageId = 1
 
-[node name="Position2D" type="Position2D" parent="LengpuiNode/Lengpui"]
+[node name="Position2D" type="Position2D" parent="Lengpui"]
 [connection signal="pressed" from="StageData/HBoxContainer/Back" to="." method="_stage_select_back"]
 
 [editable path="MainLayout"]

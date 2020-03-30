@@ -1,16 +1,22 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/start.png" type="Texture" id=1]
-[ext_resource path="res://assets/start_press.png" type="Texture" id=2]
-[ext_resource path="res://assets/exit.png" type="Texture" id=3]
-[ext_resource path="res://assets/exit_press.png" type="Texture" id=4]
+[ext_resource path="res://assets/menu_buttons/start.png" type="Texture" id=1]
+[ext_resource path="res://assets/menu_buttons/start_press.png" type="Texture" id=2]
+[ext_resource path="res://assets/menu_buttons/exit.png" type="Texture" id=3]
+[ext_resource path="res://assets/menu_buttons/exit_press.png" type="Texture" id=4]
 [ext_resource path="res://scripts/VBoxContainer.gd" type="Script" id=5]
-[ext_resource path="res://assets/settings.png" type="Texture" id=7]
-[ext_resource path="res://assets/settings_press.png" type="Texture" id=8]
+[ext_resource path="res://assets/menu_buttons/settings.png" type="Texture" id=7]
+[ext_resource path="res://assets/menu_buttons/settings_press.png" type="Texture" id=8]
 [ext_resource path="res://assets/sounds/ButtonSelect.ogg" type="AudioStream" id=9]
 [ext_resource path="res://assets/menu_logo.png" type="Texture" id=11]
 [ext_resource path="res://assets/fonts/Atarian/SF Atarian System Extended Bold.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://scenes/MainBG.tscn" type="PackedScene" id=13]
+
+
+
+
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 20

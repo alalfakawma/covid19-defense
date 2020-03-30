@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exit.png-851c039c90041d896886fb5ebf4f1311.stex"
+path="res://.import/t3_base.png-df00583409f758af407f1449bf418e37.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/exit.png"
-dest_files=[ "res://.import/exit.png-851c039c90041d896886fb5ebf4f1311.stex" ]
+source_file="res://assets/towers/t_3/t3_base.png"
+dest_files=[ "res://.import/t3_base.png-df00583409f758af407f1449bf418e37.stex" ]
 
 [params]
 
