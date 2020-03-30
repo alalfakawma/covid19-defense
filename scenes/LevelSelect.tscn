@@ -11,4 +11,33 @@ script = ExtResource( 2 )
 [node name="Title" parent="MainLayout" index="1"]
 text = "Level Select"
 
+[node name="Level1" type="Button" parent="."]
+margin_left = 290.854
+margin_top = 319.329
+margin_right = 330.854
+margin_bottom = 359.329
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Button" parent="."]
+margin_left = 477.058
+margin_top = 319.329
+margin_right = 517.058
+margin_bottom = 359.329
+disabled = true
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Button" parent="."]
+margin_left = 655.486
+margin_top = 319.329
+margin_right = 695.486
+margin_bottom = 359.329
+disabled = true
+text = "3"
+
 [editable path="MainLayout"]
