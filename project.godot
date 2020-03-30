@@ -21,7 +21,11 @@ _global_script_class_icons={
 [application]
 
 config/name="Covid19 Defense"
-run/main_scene="res://scenes/Main Menu.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
+
+[autoload]
+
+Game="*res://Game.gd"
 
 [display]
 
