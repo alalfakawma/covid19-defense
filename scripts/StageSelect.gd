@@ -10,11 +10,7 @@ func _ready():
     # Connect to StageData to set the labels
     self.connect("set_data", $StageData, "_set_data")
     self.connect("destroy_data", $StageData, "_destroy_data")
-    
-    var file = File.new()
-    file.open("res://gamedata/levels.json", File.READ)
-    Game.stageData = JSON.parse(file.get_as_text()).result
-    file.close()
+
     
     for n in stageNodes:
         n.connect("pressed", self, "_stage_button_pressed", [n])

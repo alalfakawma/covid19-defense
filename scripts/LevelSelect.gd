@@ -13,7 +13,7 @@ func _ready():
 func _levelButtonPressed(btn):
     match buttons.find(btn):
         Levels.LEVEL1:
-            print("Level 1")
+            Game.change_scene("res://scenes/Game.tscn")
         Levels.LEVEL2:
             print("Level 2")
         Levels.LEVEL3:

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/AtarianBold.tres" type="DynamicFont" id=1]
+
+[node name="TowerSelect" type="Node2D"]
+z_index = 4096
+__meta__ = {
+"_edit_vertical_guides_": [ 479.585 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 60.0
+margin_top = 69.0
+margin_right = 900.0
+margin_bottom = 469.0
+color = Color( 0.0980392, 0.0980392, 0.0980392, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 312.784
+margin_top = 76.41
+margin_right = 645.784
+margin_bottom = 127.41
+custom_fonts/font = ExtResource( 1 )
+text = "Select Tower"
+__meta__ = {
+"_edit_use_anchors_": false
+}
