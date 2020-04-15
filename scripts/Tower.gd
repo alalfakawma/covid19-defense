@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 export(int, "Tier 1", "Tier 2", "Tier 3") var tier = 0
 export(int, "Level 1", "Level 2") var level = 0

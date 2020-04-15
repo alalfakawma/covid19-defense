@@ -3,18 +3,23 @@
         "name": "Vairengte",
         "description": "HueHueHueHue, ti vat mai teh",
         "locked": false,
+        "completed": false,
         "missions": [
             {
+                "completed": false,
                 "minScore": 2000,
                 "waves": [
                     {
-                        "enemyLevel": 1
+                        "enemyLevel": 1,
+                        "amount": 4
                     },
                     {
-                        "enemyLevel": 2
+                        "enemyLevel": 2,
+                        "amount": 8
                     },
                     {
-                        "enemyLevel": 3
+                        "enemyLevel": 3,
+                        "amount": 12
                     }
                 ]
             }
@@ -23,25 +28,24 @@
     {
         "name": "Lengpui Airport",
         "locked": true,
+        "completed": false,
         "description": "Test meksss",
         "missions": [
             {
+                "completed": false,
                 "minScore": 3500,
                 "waves": [
                     {
-                        "enemyLevel": 1
+                        "enemyLevel": 1,
+                        "amount": 6
                     },
                     {
-                        "enemyLevel": 2
+                        "enemyLevel": 2,
+                        "amount": 12
                     },
                     {
-                        "enemyLevel": 3
-                    },
-                    {
-                        "enemyLevel": 4
-                    },
-                    {
-                        "enemyLevel": 5
+                        "enemyLevel": 3,
+                        "amount": 16
                     }
                 ]
             }

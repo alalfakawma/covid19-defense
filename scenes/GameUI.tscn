@@ -1,0 +1,33 @@
+[gd_scene format=2]
+
+[node name="GameUI" type="Node2D"]
+
+[node name="TowerButton" type="Button" parent="."]
+margin_left = 80.0
+margin_top = 496.0
+margin_right = 176.0
+margin_bottom = 532.0
+text = "Towers"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextWaveButton" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 496.0
+margin_right = 64.0
+margin_bottom = 532.0
+text = ">>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="Button" parent="."]
+margin_left = 915.0
+margin_top = 496.0
+margin_right = 947.0
+margin_bottom = 532.0
+text = "||"
+__meta__ = {
+"_edit_use_anchors_": false
+}
