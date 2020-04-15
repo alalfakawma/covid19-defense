@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/maptest.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Game.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://scripts/VirusSpawner.gd" type="Script" id=4]
 [ext_resource path="res://scenes/GameUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/TowerSelect.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Tower.tscn" type="PackedScene" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -40,7 +39,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="StageBG" type="TextureRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_scale = Vector2( 0.5, 0.5 )
@@ -54,10 +53,12 @@ __meta__ = {
 position = Vector2( 32.3474, 239.911 )
 script = ExtResource( 4 )
 
+[node name="Timer" type="Timer" parent="VirusSpawner"]
+
 [node name="VirusPath" type="Navigation2D" parent="."]
+visible = false
 
 [node name="NavTile" type="TileMap" parent="VirusPath"]
-visible = false
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -71,12 +72,14 @@ visible = false
 tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65548, 0, 0, 65550, 0, 0, 65552, 0, 0, 65554, 0, 0, 65556, 0, 0, 65558, 0, 0, 65560, 0, 0, 65562, 0, 0, 65564, 0, 0, 65566, 0, 0, 65568, 0, 0, 196620, 0, 0, 196640, 0, 0, 327692, 0, 0, 327712, 0, 0, 458764, 0, 0, 458784, 0, 0, 589836, 0, 0, 720898, 0, 0, 720900, 0, 0, 720902, 0, 0, 720904, 0, 0, 720906, 0, 0, 720908, 0, 0 )
+tile_data = PoolIntArray( 65550, 0, 0, 65554, 0, 0, 65558, 0, 0, 65562, 0, 0, 65566, 0, 0, 196620, 0, 0, 196640, 0, 0, 458764, 0, 0, 458772, 0, 0, 458776, 0, 0, 458784, 0, 0, 589842, 0, 0, 589850, 0, 0, 720896, 0, 0, 720900, 0, 0, 720904, 0, 0, 720908, 0, 0, 720928, 0, 0, 720944, 0, 0, 720948, 0, 0, 720952, 0, 0, 851986, 0, 0, 851994, 0, 0, 852014, 0, 0, 983072, 0, 0, 1114114, 0, 0, 1114118, 0, 0, 1114122, 0, 0, 1114126, 0, 0, 1114130, 0, 0, 1114138, 0, 0, 1114158, 0, 0, 1114166, 0, 0, 1114170, 0, 0, 1245216, 0, 0, 1245236, 0, 0, 1376282, 0, 0, 1376290, 0, 0, 1376294, 0, 0, 1376298, 0, 0, 1376302, 0, 0, 1507380, 0, 0, 1638426, 0, 0, 1769500, 0, 0, 1769504, 0, 0, 1769508, 0, 0, 1769512, 0, 0, 1769516, 0, 0, 1769520, 0, 0, 1769524, 0, 0 )
 
 [node name="TowerSelect" parent="." instance=ExtResource( 6 )]
 visible = false
 
 [node name="GameUI" parent="." instance=ExtResource( 5 )]
 
-[node name="Tower" parent="." instance=ExtResource( 7 )]
-position = Vector2( 207.636, 192.884 )
+[node name="WaveTimer" type="Timer" parent="."]
+
+[node name="PlacementTileRects" type="Node2D" parent="."]
+visible = false
