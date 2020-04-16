@@ -13,7 +13,8 @@ func _ready():
             rect.color = Color(1, 1, 1, 0.1)
             t.set_tower(i, j)
             t.scale = Vector2(0.7, 0.7)
-            t.position = Vector2(32, 38)
+            t.menu = true
+            t.position = Vector2(32, 32)
             rect.add_child(t)
             rect.connect("gui_input", self, "_gui_input", [rect, i, j])
             $HBoxContainer.add_child(rect)

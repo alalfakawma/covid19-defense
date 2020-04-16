@@ -1,6 +1,7 @@
 [
     [
         {
+            "radius": 125,
             "sprite": {
                 "base": "res://assets/towers/t_1/t1_base.png",
                 "gun": "res://assets/towers/t_1/t1_level1_gun.png",
@@ -8,6 +9,7 @@
             }
         },
         {
+            "radius": 150,
             "sprite": {
                 "base": "res://assets/towers/t_1/t1_base.png",
                 "gun": "res://assets/towers/t_1/t1_level2_gun.png",
@@ -17,6 +19,7 @@
     ],
     [
         {
+            "radius": 175,
             "sprite": {
                 "base": "res://assets/towers/t_2/t2_base.png",
                 "gun": "res://assets/towers/t_2/t2_level1_gun.png",
@@ -24,6 +27,7 @@
             }
         },
         {
+            "radius": 200,
             "sprite": {
                 "base": "res://assets/towers/t_2/t2_base.png",
                 "gun": "res://assets/towers/t_2/t2_level2_gun.png",
@@ -33,6 +37,7 @@
     ],
     [
         {
+            "radius": 225,
             "sprite": {
                 "base": "res://assets/towers/t_3/t3_base.png",
                 "gun": "res://assets/towers/t_3/t3_level1_gun.png",
@@ -40,6 +45,7 @@
             }
         },
         {
+            "radius": 250,
             "sprite": {
                 "base": "res://assets/towers/t_3/t3_base.png",
                 "gun": "res://assets/towers/t_3/t3_level2_gun.png",
