@@ -45,6 +45,11 @@ touch={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="general"
+2d_physics/layer_2="enemy"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

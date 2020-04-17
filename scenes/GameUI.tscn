@@ -1,36 +1,48 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/GameUI.gd" type="Script" id=1]
+[ext_resource path="res://assets/gui_buttons/tower/tower_unpressed.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui_buttons/tower/tower_pressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui_buttons/forward/pressed.png" type="Texture" id=4]
+[ext_resource path="res://assets/gui_buttons/pause/unpressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui_buttons/pause/pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui_buttons/forward/unpressed.png" type="Texture" id=7]
 
 [node name="GameUI" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 534.22 ]
+}
 
-[node name="TowerButton" type="Button" parent="."]
-margin_left = 80.0
-margin_top = 496.0
-margin_right = 176.0
-margin_bottom = 532.0
-text = "Towers"
+[node name="TowerButton" type="TextureButton" parent="."]
+margin_left = 63.6729
+margin_top = 494.501
+margin_right = 187.673
+margin_bottom = 533.501
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextWaveButton" type="Button" parent="."]
+[node name="NextWaveButton" type="TextureButton" parent="."]
 margin_left = 16.0
-margin_top = 496.0
-margin_right = 64.0
-margin_bottom = 532.0
-text = ">>"
+margin_top = 495.0
+margin_right = 52.0
+margin_bottom = 534.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseButton" type="Button" parent="."]
-margin_left = 915.0
-margin_top = 496.0
-margin_right = 947.0
-margin_bottom = 532.0
-text = "||"
+[node name="PauseButton" type="TextureButton" parent="."]
+margin_left = 908.0
+margin_top = 495.0
+margin_right = 944.0
+margin_bottom = 534.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

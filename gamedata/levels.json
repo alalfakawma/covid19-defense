@@ -8,7 +8,7 @@
             {
                 "completed": false,
                 "minScore": 2000,
-                "waveDelay": 2,
+                "waveDelay": 10,
                 "waves": [
                     {
                         "enemyLevel": 1,

@@ -1,6 +1,8 @@
 [
     [
         {
+            "shootSpeed": 1,
+            "damage": 10,
             "radius": 125,
             "sprite": {
                 "base": "res://assets/towers/t_1/t1_base.png",
@@ -9,6 +11,8 @@
             }
         },
         {
+            "shootSpeed": 0.85,
+            "damage": 20,
             "radius": 150,
             "sprite": {
                 "base": "res://assets/towers/t_1/t1_base.png",
@@ -19,6 +23,8 @@
     ],
     [
         {
+            "shootSpeed": 0.80,
+            "damage": 25,
             "radius": 175,
             "sprite": {
                 "base": "res://assets/towers/t_2/t2_base.png",
@@ -27,7 +33,9 @@
             }
         },
         {
+            "shootSpeed": 0.70,
             "radius": 200,
+            "damage": 40,
             "sprite": {
                 "base": "res://assets/towers/t_2/t2_base.png",
                 "gun": "res://assets/towers/t_2/t2_level2_gun.png",
@@ -37,7 +45,9 @@
     ],
     [
         {
+            "shootSpeed": 0.60,
             "radius": 225,
+            "damage": 60,
             "sprite": {
                 "base": "res://assets/towers/t_3/t3_base.png",
                 "gun": "res://assets/towers/t_3/t3_level1_gun.png",
@@ -45,7 +55,9 @@
             }
         },
         {
+            "shootSpeed": 0.50,
             "radius": 250,
+            "damage": 85,
             "sprite": {
                 "base": "res://assets/towers/t_3/t3_base.png",
                 "gun": "res://assets/towers/t_3/t3_level2_gun.png",

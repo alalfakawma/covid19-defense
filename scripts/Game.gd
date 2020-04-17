@@ -2,6 +2,9 @@ extends Node2D
 
 signal spawn_wave
 
+var bullet = load("res://scenes/Bullet.tscn")
+var waveCountdown = load("res://scenes/WaveCountdown.tscn")
+
 enum state { GAME, PAUSE_MENU, PLACE, TOWER_SELECT }
 var currentState = state.GAME setget set_state
 var currentWave = 0
@@ -17,6 +20,7 @@ func _ready():
     
     $WaveTimer.connect("timeout", self, "_wt_timeout")
     $WaveTimer.wait_time = missionData.waveDelay
+    waveSpawnCountdown(missionData.waveDelay, (currentWave + 1))
     $WaveTimer.start()
     
     self.connect("spawn_wave", $VirusSpawner, "_spawn_wave")
@@ -49,6 +53,7 @@ func set_selected_tower(t):
 func _wave_depleted():
     # Restart the wave timer, but increment the currentWave
     currentWave += 1
+    waveSpawnCountdown(missionData.waveDelay, (currentWave + 1))
     if currentWave <= (missionData.waves.size() - 1):
         $WaveTimer.start()
 
@@ -59,7 +64,7 @@ func addPlacementTileRects():
         var rect = TextureRect.new()
         rect.rect_scale = Vector2(0.5, 0.5)
         rect.rect_position = pos
-        rect.texture = load("res://assets/towers/t_1/t1_base.png")
+        rect.texture = load("res://assets/towers/tower_placement.png")
         rect.connect("gui_input", self, "_gui_input", [rect])
         $PlacementTileRects.add_child(rect)
         
@@ -70,4 +75,18 @@ func _gui_input(event, rect):
         self.currentState = state.GAME
         # Add the tower
         selectedTower.position = Vector2((rect.rect_position.x + 16), (rect.rect_position.y + 16))
+        selectedTower.connect("shoot", self, "_tower_shoot")
         add_child(selectedTower)
+
+func _tower_shoot(pos, dir, sprite, damage):
+    var b = bullet.instance()
+    b.start(pos, dir, damage)
+    b.scale = Vector2(0.6, 0.6)
+    b.get_node("Sprite").texture = sprite
+    b.get_node("CollisionShape2D").shape.extents.x = sprite.get_width()
+    add_child(b)
+
+func waveSpawnCountdown(time, waveNum):
+    var w = waveCountdown.instance()
+    w.start(time, waveNum)
+    add_child(w)

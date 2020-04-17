@@ -18,6 +18,7 @@ func _process(delta):
     
     # Emit died signal when the Virus dies from a shootout
     if health <= 0:
+        queue_free()
         emit_signal("died", self)
     
     # Remove the virus if it leaves the game screen
@@ -57,3 +58,6 @@ func set_level(l):
             $AnimatedSprite.animation = "Level 3"
             speed = 140
             health = 80
+
+func take_damage(dmg):
+    health -= dmg

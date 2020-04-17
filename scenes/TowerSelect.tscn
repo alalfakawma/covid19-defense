@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/AtarianBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/TowerSelect.gd" type="Script" id=2]
+[ext_resource path="res://assets/gui_buttons/close/unpressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui_buttons/close/pressed.png" type="Texture" id=4]
 
 [node name="TowerSelect" type="Node2D"]
 z_index = 4096
@@ -40,12 +42,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseButton" type="Button" parent="."]
-margin_left = 13.2022
-margin_top = 16.3033
-margin_right = 85.2022
-margin_bottom = 52.3033
-text = "Close"
+[node name="CloseButton" type="TextureButton" parent="."]
+margin_left = 13.0
+margin_top = 15.0
+margin_right = 83.0
+margin_bottom = 46.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
