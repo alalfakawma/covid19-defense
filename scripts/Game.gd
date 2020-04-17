@@ -8,7 +8,7 @@ var waveCountdown = load("res://scenes/WaveCountdown.tscn")
 enum state { GAME, PAUSE_MENU, PLACE, TOWER_SELECT }
 var currentState = state.GAME setget set_state
 var currentWave = 0
-var mission = 0
+onready var mission = Game.currentMission setget set_mission
 var missionData
 var selectedTower setget set_selected_tower
 
@@ -51,8 +51,13 @@ func set_selected_tower(t):
     # Selected Tower logic goes here, in case there is any
 
 func _wave_depleted():
-    # Restart the wave timer, but increment the currentWave
+    # Restart the wave timer, increment the currentWave
     currentWave += 1
+    # Check if the currentWave var has surpassed the max wave for the current mission
+    # This will determine whether or not the user has completed the mission or not
+    if currentWave >= missionData.waves.size():
+        # Mission is complete
+        get_tree().change_scene("res://scenes/MissionComplete.tscn")
     waveSpawnCountdown(missionData.waveDelay, (currentWave + 1))
     if currentWave <= (missionData.waves.size() - 1):
         $WaveTimer.start()
@@ -90,3 +95,9 @@ func waveSpawnCountdown(time, waveNum):
     var w = waveCountdown.instance()
     w.start(time, waveNum)
     add_child(w)
+
+func set_mission(m):
+    if m >= (Game.currentStageData.missions.size() - 1):
+        mission = m - 1
+    else:
+        mission = m

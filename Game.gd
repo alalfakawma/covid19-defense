@@ -7,6 +7,7 @@ var currentStageData
 var sceneHistory = [2, 3]
 var guiTweenDuration = 0.5
 var navPath
+var currentMission = 0
 enum stages { VAIRENGTE, LENGPUI }
 
 func _ready():

@@ -3,8 +3,8 @@
 [node name="Background" type="ColorRect"]
 margin_left = 0.33884
 margin_top = 0.127243
-margin_right = 1024.34
-margin_bottom = 600.127
+margin_right = 960.339
+margin_bottom = 540.127
 color = Color( 0.2, 0.305882, 0.321569, 1 )
 __meta__ = {
 "_edit_lock_": true,

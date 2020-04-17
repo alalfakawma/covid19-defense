@@ -23,6 +23,32 @@
                         "amount": 12
                     }
                 ]
+            },
+            {
+                "completed": false,
+                "minScore": 3500,
+                "waveDelay": 10,
+                "waves": [
+                    {
+                        "enemyLevel": 1,
+                        "amount": 10
+                    },
+                    {
+                        "enemyLevel": 2,
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "completed": false,
+                "minScore": 5000,
+                "waveDelay": 15,
+                "waves": [
+                    {
+                        "enemyLevel": 3,
+                        "amount": 16
+                    }
+                ]
             }
         ]
     },

@@ -24,8 +24,6 @@ __meta__ = {
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
 margin_top = 0.127258
-margin_right = 960.339
-margin_bottom = 540.127
 
 [node name="Footer" type="Label" parent="."]
 margin_left = 318.945
