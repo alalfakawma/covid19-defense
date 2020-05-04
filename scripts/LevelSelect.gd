@@ -5,7 +5,6 @@ onready var buttons = []
 
 func _ready():
     createStageButtons()
-    
     $MainLayout/Title.text = Game.currentStageData.name
 
 func _levelButtonPressed(btn):

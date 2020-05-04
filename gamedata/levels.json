@@ -9,6 +9,7 @@
                 "completed": false,
                 "minScore": 2000,
                 "waveDelay": 10,
+                "baseHealth": 100,
                 "waves": [
                     {
                         "enemyLevel": 1,
@@ -28,6 +29,7 @@
                 "completed": false,
                 "minScore": 3500,
                 "waveDelay": 10,
+                "baseHealth": 100,
                 "waves": [
                     {
                         "enemyLevel": 1,
@@ -42,6 +44,7 @@
             {
                 "completed": false,
                 "minScore": 5000,
+                "baseHealth": 100,
                 "waveDelay": 15,
                 "waves": [
                     {
@@ -62,6 +65,7 @@
                 "completed": false,
                 "minScore": 3500,
                 "waveDelay": 30,
+                "baseHealth": 100,
                 "waves": [
                     {
                         "enemyLevel": 1,

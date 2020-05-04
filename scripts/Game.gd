@@ -7,7 +7,7 @@ var waveCountdown = load("res://scenes/WaveCountdown.tscn")
 
 enum state { GAME, PAUSE_MENU, PLACE, TOWER_SELECT }
 var currentState = state.GAME setget set_state
-var currentWave = 0
+var currentWave = 0 setget set_wave
 onready var mission = Game.currentMission setget set_mission
 var missionData
 var selectedTower setget set_selected_tower
@@ -57,6 +57,7 @@ func _wave_depleted():
     # This will determine whether or not the user has completed the mission or not
     if currentWave >= missionData.waves.size():
         # Mission is complete
+        Game.missionComplete(mission)
         get_tree().change_scene("res://scenes/MissionComplete.tscn")
     waveSpawnCountdown(missionData.waveDelay, (currentWave + 1))
     if currentWave <= (missionData.waves.size() - 1):
@@ -93,11 +94,20 @@ func _tower_shoot(pos, dir, sprite, damage):
 
 func waveSpawnCountdown(time, waveNum):
     var w = waveCountdown.instance()
+    var ypos = $VirusSpawner.position.y
+    var wh = w.get_node("Container").rect_size.y
+    w.position = Vector2(0, (ypos - (wh / 2)))
     w.start(time, waveNum)
     add_child(w)
 
 func set_mission(m):
     if m >= (Game.currentStageData.missions.size() - 1):
-        mission = m - 1
+        # All missions done
+        Game.stageComplete()
+        mission = (Game.currentStageData.missions.size() - 1)
     else:
         mission = m
+
+func set_wave(w):
+    currentWave = w
+    
