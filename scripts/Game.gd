@@ -83,6 +83,7 @@ func _gui_input(event, rect):
         selectedTower.position = Vector2((rect.rect_position.x + 16), (rect.rect_position.y + 16))
         selectedTower.connect("shoot", self, "_tower_shoot")
         add_child(selectedTower)
+        get_tree().paused = false
 
 func _tower_shoot(pos, dir, sprite, damage):
     var b = bullet.instance()

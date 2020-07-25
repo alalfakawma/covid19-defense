@@ -21,6 +21,7 @@ func _ready():
 
 func _close():
     var p = get_parent()
+    get_tree().paused = false
     p.currentState = p.state.GAME
 
 func _gui_input(event, rect, tier, level):
@@ -33,3 +34,6 @@ func _gui_input(event, rect, tier, level):
         var t = tower.instance()
         t.set_tower(tier, level)
         p.selectedTower = t
+        
+func _process(delta):
+    $Coins.text = "COINS: %d" % Game.coins

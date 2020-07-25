@@ -10,7 +10,7 @@
         - [] Stage 3
 
 - [x] Change virus spawn countdown
-- [] As soon as player starts the game for first time, request to pick a name which will be permanent in a file (if reset they can change name)
+- [x] As soon as player starts the game for first time, request to pick a name which will be permanent in a file (if reset they can change name)
 - [x] Copy config file to {filename}.JSON so default file is preserved in case of reset
     - [] Add reset game data button which will remove {filename}.JSON
 

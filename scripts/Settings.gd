@@ -29,7 +29,9 @@ func _on_MusicButton_pressed():
 
 func _s_b_pressed():
     if get_parent().name == "GameUI":
+        get_tree().paused = false
         queue_free()
 
 func _m_pressed():
+    get_tree().paused = false
     Game.change_scene("res://scenes/MainMenu.tscn")

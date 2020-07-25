@@ -82,4 +82,5 @@ visible = false
 [node name="WaveTimer" type="Timer" parent="."]
 
 [node name="PlacementTileRects" type="Node2D" parent="."]
+pause_mode = 2
 visible = false
