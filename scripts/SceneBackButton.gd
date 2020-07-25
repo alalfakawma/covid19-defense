@@ -1,4 +1,5 @@
 extends TextureButton
 
 func _pressed():
-    Game.previous_scene()
+    if not find_parent("GameUI"):
+        Game.previous_scene()

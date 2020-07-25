@@ -2,6 +2,7 @@ extends Node
 
 onready var firstTimeScreen = load("res://scenes/FirstTimeScreen.tscn")
 var stageData
+var musicOn = false
 var towerData
 var currentNode
 var currentStageData
@@ -10,6 +11,8 @@ var guiTweenDuration = 0.5
 var navPath
 var currentMission = 0
 var playerData
+var borderHealth = 100
+var coins = 50
 enum stages { VAIRENGTE, LENGPUI }
 var filenames = {
     stageData = "user://levels.json",
@@ -37,7 +40,6 @@ func _ready():
         if playerData.name == null:
             var fts = firstTimeScreen.instance()
             self.get_parent().get_node("MainMenu").add_child(fts)
-            fts.get_node("LineEdit").connect("text_changed", self, "_name_text_changed", [fts])
             fts.get_node("Button").connect("pressed", self, "_save_name", [fts])    
     # Tower files
     towerData = loadFile("res://gamedata/towers.json")
@@ -83,6 +85,3 @@ func _save_name(fts):
         playerData.name = name
         saveFile(filenames.playerData, JSON.print(playerData))
         fts.queue_free()
-
-func _name_text_changed(text, fts):
-    print(text)

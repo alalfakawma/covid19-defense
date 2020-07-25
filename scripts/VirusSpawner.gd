@@ -39,11 +39,15 @@ func _spawn_wave(waveData):
     $Timer.start()
 
 func _v_died(v):
+    # do anything
     removeFromActive(v)
 
 func _v_offscreen(v):
+    var p = get_parent()
+    var dmg = p.missionData.waves[p.currentWave].dmgMultiplier * v.damage
+    print(dmg)
+    Game.borderHealth -= dmg
     removeFromActive(v)
-    # TODO: Inflict damage to the base when the virus crosses offscreen
         
 func removeFromActive(v):
     if v in activeViruses:

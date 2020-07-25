@@ -1,7 +1,7 @@
 [
     {
         "name": "Vairengte",
-        "description": "HueHueHueHue, ti vat mai teh",
+        "description": "First level. Easy enemies. Be careful.",
         "locked": false,
         "completed": false,
         "missions": [
@@ -13,15 +13,18 @@
                 "waves": [
                     {
                         "enemyLevel": 1,
-                        "amount": 4
+                        "amount": 4,
+                        "dmgMultiplier": 0.5
                     },
                     {
                         "enemyLevel": 2,
-                        "amount": 8
+                        "amount": 8,
+                        "dmgMultiplier": 0.75
                     },
                     {
                         "enemyLevel": 3,
-                        "amount": 12
+                        "amount": 12,
+                        "dmgMultiplier": 1
                     }
                 ]
             },
@@ -33,11 +36,13 @@
                 "waves": [
                     {
                         "enemyLevel": 1,
-                        "amount": 10
+                        "amount": 10,
+                        "dmgMultiplier": 0.75
                     },
                     {
                         "enemyLevel": 2,
-                        "amount": 15
+                        "amount": 15,
+                        "dmgMultiplier": 0.85
                     }
                 ]
             },
@@ -49,7 +54,8 @@
                 "waves": [
                     {
                         "enemyLevel": 3,
-                        "amount": 16
+                        "amount": 16,
+                        "dmgMultiplier": 1.05
                     }
                 ]
             }
@@ -59,7 +65,7 @@
         "name": "Lengpui Airport",
         "locked": true,
         "completed": false,
-        "description": "Test meksss",
+        "description": "Second Level. Harder enemies. Be prepared.",
         "missions": [
             {
                 "completed": false,
@@ -68,16 +74,19 @@
                 "baseHealth": 100,
                 "waves": [
                     {
-                        "enemyLevel": 1,
-                        "amount": 6
+                        "enemyLevel": 2,
+                        "amount": 10,
+                        "dmgMultiplier": 1.05
                     },
                     {
                         "enemyLevel": 2,
-                        "amount": 12
+                        "amount": 12,
+                        "dmgMultiplier": 1.25
                     },
                     {
                         "enemyLevel": 3,
-                        "amount": 16
+                        "amount": 16,
+                        "dmgMultiplier": 2.05
                     }
                 ]
             }

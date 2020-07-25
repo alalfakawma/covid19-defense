@@ -16,7 +16,8 @@ func _ready():
     $ExitButton.connect("pressed", self, "_exit_button_pressed")
 
 func _play_button_sound():
-    $ButtonSelectSound.play() # Play sound
+    if Game.musicOn:
+        $ButtonSelectSound.play() # Play sound
 
 func _start_button_pressed():
     self._play_button_sound()
@@ -24,6 +25,7 @@ func _start_button_pressed():
 
 func _settings_button_pressed():
     self._play_button_sound()
+    Game.change_scene("res://scenes/Settings.tscn")
     
 func _exit_button_pressed():
     get_tree().quit() # Quit the game

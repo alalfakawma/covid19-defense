@@ -6,6 +6,7 @@ signal offscreen
 var path = []
 var health = 20
 var speed = 80
+var damage = 10
 export(int, "Level 1", "Level 2", "Level 3") var level = 0 setget set_level
 
 func _ready():
@@ -48,16 +49,19 @@ func set_level(l):
     match level:
         0:
             $AnimatedSprite.animation = "Level 1"
-            speed = 80
-            health = 20
+            speed = 100
+            health = 30
+            damage = 10
         1:
             $AnimatedSprite.animation = "Level 2"
-            speed = 120
-            health = 40
+            speed = 125
+            health = 50
+            damage = 12
         2:
             $AnimatedSprite.animation = "Level 3"
-            speed = 140
-            health = 80
+            speed = 145
+            health = 90
+            damage = 15
 
 func take_damage(dmg):
     health -= dmg
