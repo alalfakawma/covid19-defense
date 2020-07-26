@@ -1,6 +1,7 @@
 extends Node2D
 
 func _next_mission():
+    AudioManager.playAudio("buttonClick")
     Game.currentMission += 1
     # Check if next mission exists
     if Game.currentMission >= Game.currentStageData.missions.size():
@@ -10,4 +11,5 @@ func _next_mission():
         get_tree().change_scene("res://scenes/Game.tscn")
 
 func _main_menu():
+    AudioManager.playAudio("buttonClick")
     get_tree().change_scene("res://scenes/MainMenu.tscn")

@@ -26,6 +26,7 @@ run/main_scene="res://scenes/MainMenu.tscn"
 [autoload]
 
 Game="*res://Game.gd"
+AudioManager="*res://scenes/AudioManager.tscn"
 
 [display]
 

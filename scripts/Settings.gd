@@ -24,6 +24,7 @@ func _on_MusicButton_pressed():
         $VBoxContainer/MusicButton.texture_pressed = musicOffPressed
     else:
         Game.musicOn = true
+        AudioManager.playAudio("buttonClick")        
         $VBoxContainer/MusicButton.texture_normal = musicOnUnpressed
         $VBoxContainer/MusicButton.texture_pressed = musicOnPressed
 
@@ -33,5 +34,6 @@ func _s_b_pressed():
         queue_free()
 
 func _m_pressed():
+    AudioManager.playAudio("buttonClick")
     get_tree().paused = false
     Game.change_scene("res://scenes/MainMenu.tscn")

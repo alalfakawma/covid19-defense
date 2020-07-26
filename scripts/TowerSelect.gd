@@ -20,6 +20,7 @@ func _ready():
             $HBoxContainer.add_child(rect)
 
 func _close():
+    AudioManager.playAudio("buttonClick")
     var p = get_parent()
     get_tree().paused = false
     p.currentState = p.state.GAME
@@ -28,6 +29,7 @@ func _gui_input(event, rect, tier, level):
     if event.is_action_pressed("touch"):
         rect.color = Color(1, 1, 1, 0.3)
     elif event.is_action_released("touch"):
+        AudioManager.playAudio("buttonClick")        
         var p = get_parent()
         rect.color = Color(1, 1, 1, 0.1)
         p.currentState = p.state.PLACE

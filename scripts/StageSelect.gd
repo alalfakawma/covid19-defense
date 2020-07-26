@@ -16,6 +16,7 @@ func _ready():
         n.connect("pressed", self, "_stage_button_pressed", [n])
 
 func _stage_button_pressed(node):
+    AudioManager.playAudio("buttonClick")
     Game.currentNode = node
     var tweenPos = $TweenPosition.position
     for n in stageNodes:
@@ -34,6 +35,7 @@ func _stage_button_pressed(node):
             $Tween.start()
 
 func _stage_select_back():
+    AudioManager.playAudio("buttonClick")
     var node = Game.currentNode
     for n in stageNodes:
         if (!Game.stageData[n.stageId].locked):
@@ -47,5 +49,6 @@ func _stage_select_back():
     pass
 
 func _stage_select_start():
+    AudioManager.playAudio("buttonClick")
     Game.currentStageData = Game.stageData[Game.currentNode.stageId]
     Game.change_scene("res://scenes/LevelSelect.tscn")

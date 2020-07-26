@@ -9,8 +9,6 @@
 [node name="MainLayout" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
-margin_right = 960.339
-margin_bottom = 540.127
 
 [node name="Title" type="Label" parent="."]
 margin_left = 287.564

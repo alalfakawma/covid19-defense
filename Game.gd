@@ -2,7 +2,7 @@ extends Node
 
 onready var firstTimeScreen = load("res://scenes/FirstTimeScreen.tscn")
 var stageData
-var musicOn = false
+var musicOn = true setget set_music
 var towerData
 var currentNode
 var currentStageData
@@ -11,7 +11,7 @@ var guiTweenDuration = 0.5
 var navPath
 var currentMission = 0
 var playerData
-var borderHealth = 100
+var borderHealth = 10
 var coins = 50
 enum stages { VAIRENGTE, LENGPUI }
 var filenames = {
@@ -37,6 +37,7 @@ func _ready():
         # Load the files
         playerData = loadFile(filenames.playerData)
         stageData = loadFile(filenames.stageData)
+        musicOn = playerData.soundOn # sound
         if playerData.name == null:
             var fts = firstTimeScreen.instance()
             self.get_parent().get_node("MainMenu").add_child(fts)
@@ -74,7 +75,11 @@ func fileExists(fn):
 func missionComplete(m):
     stageData[stageData.find(currentStageData)].missions[m].completed = true
     saveFile(filenames.stageData, JSON.print(stageData))
-
+    
+func missionFailed(m):
+    print(stageData[stageData.find(currentStageData)].missions[m])
+    change_scene("res://scenes/MissionFailed.tscn")
+    
 func stageComplete():
     stageData[stageData.find(currentStageData)].completed = true
     saveFile(filenames.stageData, JSON.print(stageData))
@@ -85,3 +90,7 @@ func _save_name(fts):
         playerData.name = name
         saveFile(filenames.playerData, JSON.print(playerData))
         fts.queue_free()
+
+func set_music(v):
+    musicOn = v
+    saveFile(filenames.playerData, JSON.print(playerData))

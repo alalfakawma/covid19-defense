@@ -15,16 +15,12 @@ func _ready():
     $SettingsButton.connect("pressed", self, "_settings_button_pressed")
     $ExitButton.connect("pressed", self, "_exit_button_pressed")
 
-func _play_button_sound():
-    if Game.musicOn:
-        $ButtonSelectSound.play() # Play sound
-
 func _start_button_pressed():
-    self._play_button_sound()
+    AudioManager.playAudio("buttonClick")
     Game.change_scene("res://scenes/StageSelect.tscn")
 
 func _settings_button_pressed():
-    self._play_button_sound()
+    AudioManager.playAudio("buttonClick")
     Game.change_scene("res://scenes/Settings.tscn")
     
 func _exit_button_pressed():

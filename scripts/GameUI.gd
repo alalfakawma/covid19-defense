@@ -9,13 +9,16 @@ func _ready():
     $PauseButton.connect("pressed", self, "_p_pressed")
 
 func _tb_pressed():
+    AudioManager.playAudio("buttonClick")
     get_tree().paused = true
     p.currentState = p.state.TOWER_SELECT
 
 func _nwb_pressed():
+    AudioManager.playAudio("buttonClick")
     p.get_node("VirusSpawner").spawnVirus()
 
 func _p_pressed():
+    AudioManager.playAudio("buttonClick")
     get_tree().paused = true
     add_child(settings.instance())
 

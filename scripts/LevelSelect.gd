@@ -8,6 +8,7 @@ func _ready():
     $MainLayout/Title.text = Game.currentStageData.name
 
 func _levelButtonPressed(btn):
+    AudioManager.playAudio("buttonClick")
     match buttons.find(btn):
         Levels.LEVEL1:
             Game.change_scene("res://scenes/Game.tscn")

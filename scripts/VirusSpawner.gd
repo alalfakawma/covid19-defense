@@ -43,10 +43,13 @@ func _v_died(v):
     removeFromActive(v)
 
 func _v_offscreen(v):
+    # Deal damage to base
     var p = get_parent()
     var dmg = p.missionData.waves[p.currentWave].dmgMultiplier * v.damage
-    print(dmg)
     Game.borderHealth -= dmg
+    # Check if the base still has health
+    if Game.borderHealth <= 0:
+        Game.missionFailed(p.mission)
     removeFromActive(v)
         
 func removeFromActive(v):
