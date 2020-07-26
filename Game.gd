@@ -93,4 +93,5 @@ func _save_name(fts):
 
 func set_music(v):
     musicOn = v
+    playerData.soundOn = musicOn
     saveFile(filenames.playerData, JSON.print(playerData))
