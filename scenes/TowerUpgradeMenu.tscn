@@ -35,10 +35,22 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_left = -60.0
-margin_top = -45.0
-margin_bottom = -31.0
+margin_top = -29.0
+margin_bottom = -15.0
 rect_scale = Vector2( 2, 2 )
 text = "Price: 20"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -61.0
+margin_top = -61.4757
+margin_right = 1.0
+margin_bottom = -47.4757
+rect_scale = Vector2( 2, 2 )
+text = "UPGRADE"
 uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
