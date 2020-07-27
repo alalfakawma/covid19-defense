@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/towers/t_1/t1_level1_gun.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Tower.gd" type="Script" id=2]
 [ext_resource path="res://assets/towers/t_1/t1_base.png" type="Texture" id=3]
+[ext_resource path="res://scenes/TowerUpgradeMenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 150.0
@@ -10,9 +11,6 @@ radius = 150.0
 [node name="Tower" type="Area2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="TowerBase" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -28,5 +26,20 @@ position = Vector2( 58, 0 )
 shape = SubResource( 1 )
 
 [node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Click" type="TextureButton" parent="."]
+visible = false
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TowerUpgradeMenu" parent="." instance=ExtResource( 4 )]
+visible = false
 [connection signal="area_entered" from="." to="." method="_on_Tower_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Tower_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_Tower_mouse_entered"]

@@ -15,7 +15,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 944.148, 15.8851 ]
 }
 
-[node name="TowerButton" type="TextureButton" parent="."]
+[node name="NonPlaceRender" type="Node2D" parent="."]
+
+[node name="TowerButton" type="TextureButton" parent="NonPlaceRender"]
 margin_left = 63.6729
 margin_top = 494.501
 margin_right = 187.673
@@ -26,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextWaveButton" type="TextureButton" parent="."]
+[node name="NextWaveButton" type="TextureButton" parent="NonPlaceRender"]
 margin_left = 16.0
 margin_top = 495.0
 margin_right = 52.0
@@ -37,7 +39,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseButton" type="TextureButton" parent="."]
+[node name="PauseButton" type="TextureButton" parent="NonPlaceRender"]
 margin_left = 908.0
 margin_top = 495.0
 margin_right = 944.0
@@ -48,7 +50,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="NonPlaceRender"]
 margin_left = 723.619
 margin_top = 8.58714
 margin_right = 942.619
@@ -59,7 +61,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Coins" type="Label" parent="HBoxContainer"]
+[node name="Coins" type="Label" parent="NonPlaceRender/HBoxContainer"]
 margin_top = 12.0
 margin_right = 65.0
 margin_bottom = 26.0
@@ -68,12 +70,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BorderHealth" type="Label" parent="HBoxContainer"]
+[node name="BorderHealth" type="Label" parent="NonPlaceRender/HBoxContainer"]
 margin_left = 80.0
 margin_top = 12.0
 margin_right = 219.0
 margin_bottom = 26.0
 text = "BORDER HEALTH: 100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cancel" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 20.27
+margin_top = 11.7325
+margin_right = 74.27
+margin_bottom = 31.7325
+text = "Cancel"
 __meta__ = {
 "_edit_use_anchors_": false
 }

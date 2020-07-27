@@ -28,3 +28,4 @@ func removeSelf():
     $Tween.interpolate_property(self, "modulate:a", self.modulate.a, 0, 2.5, Tween.TRANS_BACK, Tween.EASE_OUT)
     $Tween.start()
     $Tween.interpolate_callback(self, 2, "queue_free")
+    get_parent().wcd = null

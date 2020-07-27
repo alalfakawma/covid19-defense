@@ -4,6 +4,8 @@
             "shootSpeed": 1,
             "damage": 10,
             "radius": 125,
+            "price": 10,
+            "level": 1,
             "sprite": {
                 "base": "res://assets/towers/t_1/t1_base.png",
                 "gun": "res://assets/towers/t_1/t1_level1_gun.png",
@@ -14,6 +16,8 @@
             "shootSpeed": 0.85,
             "damage": 20,
             "radius": 150,
+            "price": 30,
+            "level": 2,
             "sprite": {
                 "base": "res://assets/towers/t_1/t1_base.png",
                 "gun": "res://assets/towers/t_1/t1_level2_gun.png",
@@ -23,9 +27,11 @@
     ],
     [
         {
-            "shootSpeed": 0.80,
+            "shootSpeed": 0.8,
             "damage": 25,
             "radius": 175,
+            "price": 20,
+            "level": 1,
             "sprite": {
                 "base": "res://assets/towers/t_2/t2_base.png",
                 "gun": "res://assets/towers/t_2/t2_level1_gun.png",
@@ -33,9 +39,11 @@
             }
         },
         {
-            "shootSpeed": 0.70,
+            "shootSpeed": 0.7,
             "radius": 200,
             "damage": 40,
+            "price": 40,
+            "level": 2,
             "sprite": {
                 "base": "res://assets/towers/t_2/t2_base.png",
                 "gun": "res://assets/towers/t_2/t2_level2_gun.png",
@@ -45,9 +53,11 @@
     ],
     [
         {
-            "shootSpeed": 0.60,
+            "shootSpeed": 0.6,
             "radius": 225,
             "damage": 60,
+            "price": 45,
+            "level": 1,
             "sprite": {
                 "base": "res://assets/towers/t_3/t3_base.png",
                 "gun": "res://assets/towers/t_3/t3_level1_gun.png",
@@ -55,9 +65,11 @@
             }
         },
         {
-            "shootSpeed": 0.50,
+            "shootSpeed": 0.5,
             "radius": 250,
             "damage": 85,
+            "price": 80,
+            "level": 2,
             "sprite": {
                 "base": "res://assets/towers/t_3/t3_base.png",
                 "gun": "res://assets/towers/t_3/t3_level2_gun.png",

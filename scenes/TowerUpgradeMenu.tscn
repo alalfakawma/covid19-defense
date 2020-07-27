@@ -1,0 +1,45 @@
+[gd_scene format=2]
+
+[node name="TowerUpgradeMenu" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -96.0
+margin_top = -96.0
+margin_right = 96.0
+margin_bottom = 96.0
+rect_pivot_offset = Vector2( 96, 96 )
+color = Color( 0, 0, 0, 0.882353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tick" type="Button" parent="."]
+margin_left = -95.0
+margin_top = 33.0
+margin_right = -1.0
+margin_bottom = 95.0
+text = "UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 33.0
+margin_right = 95.0
+margin_bottom = 95.0
+text = "CLOSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -60.0
+margin_top = -45.0
+margin_bottom = -31.0
+rect_scale = Vector2( 2, 2 )
+text = "Price: 20"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

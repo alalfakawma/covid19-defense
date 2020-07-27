@@ -80,6 +80,10 @@ func missionFailed(m):
     print(stageData[stageData.find(currentStageData)].missions[m])
     change_scene("res://scenes/MissionFailed.tscn")
     
+func missionRetry():
+    coins = 50
+    change_scene("res://scenes/Game.tscn")
+    
 func stageComplete():
     stageData[stageData.find(currentStageData)].completed = true
     saveFile(filenames.stageData, JSON.print(stageData))

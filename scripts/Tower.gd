@@ -8,11 +8,16 @@ export(int, "Level 1", "Level 2") var level = 0
 var menu = false
 var shootSpeed = 1 # Delay in seconds
 var canShoot = false
+var price
 var damage = 10 # Base Damage
 var virusesInVision = []
 var currentTarget = null
 
 func _ready():
+    $Click.connect("pressed", self, "_upgrade")
+    $TowerUpgradeMenu/Tick.connect("pressed", self, "_upgrade_confirmed")
+    $TowerUpgradeMenu/Close.connect("pressed", self, "_upgrade_cancelled")
+    
     if not self.menu:
         $ShootTimer.wait_time = shootSpeed
         $ShootTimer.connect("timeout", self, "_shoot")
@@ -34,6 +39,7 @@ func set_tower(t, l):
     $ViewRadius.shape.radius = Game.towerData[t][l].radius
     damage = Game.towerData[t][l].damage
     shootSpeed = Game.towerData[t][l].shootSpeed
+    price = Game.towerData[t][l].price
     $ShootTimer.wait_time = shootSpeed
     loadSprites()
     
@@ -64,3 +70,18 @@ func _on_Tower_area_exited(area):
         if not "menu" in area and "health" in area:
             virusesInVision.remove(virusesInVision.find(area))
             currentTarget = virusesInVision.front()
+
+func _upgrade():
+    for t in get_parent().get_children():
+        if get_instance_id() != t.get_instance_id():
+            t.get_node("TowerUpgradeMenu").visible = false
+    
+    if level < 1:
+        $TowerUpgradeMenu.visible = true
+
+func _upgrade_confirmed():
+    set_tower(tier, level + 1)
+    $TowerUpgradeMenu.visible = false
+
+func _upgrade_cancelled():
+    $TowerUpgradeMenu.visible = false

@@ -2,9 +2,10 @@ extends Node2D
 
 signal spawn_wave
 
-var bullet = load("res://scenes/Bullet.tscn")
-var waveCountdown = load("res://scenes/WaveCountdown.tscn")
+var bullet = preload("res://scenes/Bullet.tscn")
+var waveCountdown = preload("res://scenes/WaveCountdown.tscn")
 
+var wcd
 enum state { GAME, PAUSE_MENU, PLACE, TOWER_SELECT }
 var currentState = state.GAME setget set_state
 var currentWave = 0 setget set_wave
@@ -17,6 +18,8 @@ onready var t_Select = preload("res://scenes/TowerSelect.tscn")
 func _ready():
     Game.navPath = $VirusPath.get_simple_path($VirusSpawner.position, $EndPosition.position)
     missionData = Game.currentStageData.missions[mission]
+    
+    Game.borderHealth = missionData.baseHealth
     
     $WaveTimer.connect("timeout", self, "_wt_timeout")
     $WaveTimer.wait_time = missionData.waveDelay
@@ -33,9 +36,15 @@ func set_state(s):
     currentState = s
     match currentState:
         state.GAME:
+            $GameUI/NonPlaceRender.visible = true
+            $GameUI/Cancel.visible = false
+            if wcd: wcd.visible = true
             $PlacementTileRects.visible = false
             $TowerSelect.visible = false
         state.PLACE:
+            $GameUI/NonPlaceRender.visible = false
+            $GameUI/Cancel.visible = true
+            if wcd: wcd.visible = false
             $TowerSelect.visible = false
             $PlacementTileRects.visible = true
         state.TOWER_SELECT:
@@ -78,11 +87,19 @@ func _gui_input(event, rect):
     if event.is_action_pressed("touch"):
         rect.modulate.a = 0.8
     elif event.is_action_released("touch"):
+        $GameUI/NonPlaceRender.visible = true
+        if wcd: wcd.visible = true
+        $GameUI/Cancel.visible = false
         self.currentState = state.GAME
+        for ptr in $PlacementTileRects.get_children():
+            if ptr.rect_position == rect.rect_position:
+                ptr.queue_free()
         # Add the tower
         selectedTower.position = Vector2((rect.rect_position.x + 16), (rect.rect_position.y + 16))
         selectedTower.connect("shoot", self, "_tower_shoot")
-        add_child(selectedTower)
+        selectedTower.get_node("Click").visible = true
+        Game.coins -= selectedTower.price
+        $Towers.add_child(selectedTower)
         get_tree().paused = false
 
 func _tower_shoot(pos, dir, sprite, damage):
@@ -94,12 +111,12 @@ func _tower_shoot(pos, dir, sprite, damage):
     add_child(b)
 
 func waveSpawnCountdown(time, waveNum):
-    var w = waveCountdown.instance()
+    wcd = waveCountdown.instance()
     var ypos = $VirusSpawner.position.y
-    var wh = w.get_node("Container").rect_size.y
-    w.position = Vector2(0, (ypos - (wh / 2)))
-    w.start(time, waveNum)
-    add_child(w)
+    var wh = wcd.get_node("Container").rect_size.y
+    wcd.position = Vector2(0, (ypos - (wh / 2)) - 2)
+    wcd.start(time, waveNum)
+    add_child(wcd)
 
 func set_mission(m):
     if m >= (Game.currentStageData.missions.size() - 1):
