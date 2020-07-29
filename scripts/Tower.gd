@@ -28,10 +28,11 @@ func _ready():
     $TowerUpgradeMenu/Label.text = "Price: %s" % Game.towerData[tier][level + 1].price
 
 func _process(delta):
-    if Game.towerData[tier][level + 1].price > Game.coins:
-        $TowerUpgradeMenu/Tick.disabled = true
-    else:
-        $TowerUpgradeMenu/Tick.disabled = false
+    if level != 1:
+        if Game.towerData[tier][level + 1].price > Game.coins:
+            $TowerUpgradeMenu/Tick.disabled = true
+        else:
+            $TowerUpgradeMenu/Tick.disabled = false
     
     if currentTarget != null:
         # Look at the target
@@ -87,6 +88,7 @@ func _upgrade():
         $TowerUpgradeMenu.visible = true
 
 func _upgrade_confirmed():
+    Game.coins -= Game.towerData[tier][level + 1].price    
     set_tower(tier, level + 1)
     $TowerUpgradeMenu.visible = false
 
