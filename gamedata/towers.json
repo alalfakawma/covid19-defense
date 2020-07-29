@@ -41,7 +41,7 @@
         {
             "shootSpeed": 0.7,
             "radius": 200,
-            "damage": 40,
+            "damage": 35,
             "price": 40,
             "level": 2,
             "sprite": {
@@ -55,7 +55,7 @@
         {
             "shootSpeed": 0.6,
             "radius": 225,
-            "damage": 60,
+            "damage": 50,
             "price": 45,
             "level": 1,
             "sprite": {
@@ -67,7 +67,7 @@
         {
             "shootSpeed": 0.5,
             "radius": 250,
-            "damage": 85,
+            "damage": 65,
             "price": 80,
             "level": 2,
             "sprite": {
