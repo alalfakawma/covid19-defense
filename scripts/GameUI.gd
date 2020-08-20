@@ -16,7 +16,9 @@ func _tb_pressed():
 
 func _nwb_pressed():
     AudioManager.playAudio("buttonClick")
-    p.get_node("VirusSpawner").spawnVirus()
+    p.wcd.countdown = 0
+    p.get_node("WaveTimer").emit_signal("timeout")
+    $NonPlaceRender/NextWaveButton.disabled = true
 
 func _p_pressed():
     AudioManager.playAudio("buttonClick")

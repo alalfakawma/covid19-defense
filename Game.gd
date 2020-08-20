@@ -1,5 +1,7 @@
 extends Node
 
+const START_COINS = 35
+
 onready var firstTimeScreen = load("res://scenes/FirstTimeScreen.tscn")
 var stageData
 var musicOn = true setget set_music
@@ -12,7 +14,7 @@ var navPath
 var currentMission = 0
 var playerData
 var borderHealth = 10
-var coins = 50
+var coins = 35
 enum stages { VAIRENGTE, LENGPUI }
 var filenames = {
     stageData = "user://levels.json",
@@ -81,7 +83,7 @@ func missionFailed(m):
     change_scene("res://scenes/MissionFailed.tscn")
     
 func missionRetry():
-    coins = 50
+    coins = Game.START_COINS
     change_scene("res://scenes/Game.tscn")
     
 func stageComplete():

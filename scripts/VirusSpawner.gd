@@ -41,6 +41,8 @@ func _spawn_wave(waveData):
 func _v_died(v):
     # do anything
     removeFromActive(v)
+    # Add coins
+    Game.coins += (v.level + 1) * 5
 
 func _v_offscreen(v):
     # Deal damage to base

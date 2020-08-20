@@ -8,7 +8,7 @@ func _ready():
     $MainLayout/Title.text = Game.currentStageData.name
 
 func _levelButtonPressed(btn):
-    Game.coins = 50
+    Game.coins = Game.START_COINS
     AudioManager.playAudio("buttonClick")
     match buttons.find(btn):
         Levels.LEVEL1:

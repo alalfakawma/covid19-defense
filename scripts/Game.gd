@@ -69,6 +69,10 @@ func _wave_depleted():
         Game.missionComplete(mission)
         get_tree().change_scene("res://scenes/MissionComplete.tscn")
     waveSpawnCountdown(missionData.waveDelay, (currentWave + 1))
+    
+    # Enable the nextwave button
+    $GameUI/NonPlaceRender/NextWaveButton.disabled = false
+    
     if currentWave <= (missionData.waves.size() - 1):
         $WaveTimer.start()
 
