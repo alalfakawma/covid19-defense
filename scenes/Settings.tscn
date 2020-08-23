@@ -39,6 +39,7 @@ margin_top = 199.475
 margin_right = 564.105
 margin_bottom = 240.475
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Settings"
 
 [node name="SceneBackButton" parent="MainLayout" index="2"]
