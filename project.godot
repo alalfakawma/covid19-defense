@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="Covid19 Defense"
 run/main_scene="res://scenes/MainMenu.tscn"
+config/icon="res://assets/app_icon/playstore.png"
 
 [autoload]
 
@@ -44,6 +45,10 @@ window/stretch/aspect="keep"
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+
+[gui]
+
+theme/use_hidpi=true
 
 [input]
 

@@ -39,7 +39,6 @@ margin_top = 199.475
 margin_right = 564.105
 margin_bottom = 240.475
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Settings"
 
 [node name="SceneBackButton" parent="MainLayout" index="2"]
@@ -81,7 +80,11 @@ margin_top = 287.402
 margin_right = 431.611
 margin_bottom = 317.402
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Music :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sound" type="Label" parent="."]
 margin_left = 326.611
@@ -89,6 +92,7 @@ margin_top = 362.402
 margin_right = 431.611
 margin_bottom = 392.402
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Sound :"
 [connection signal="pressed" from="VBoxContainer/MusicButton" to="." method="_on_MusicButton_pressed"]
 
