@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/MainLayout.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/text_box.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Atarian/SF Atarian System Bold.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 35
+size = 40
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
 use_filter = true
 font_data = ExtResource( 3 )
 
@@ -39,14 +44,32 @@ __meta__ = {
 
 [node name="About" type="Label" parent="."]
 margin_left = 443.768
-margin_top = 97.699
+margin_top = 102.699
 margin_right = 515.768
-margin_bottom = 133.699
+margin_bottom = 138.699
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.00392157, 0.988235, 0.768627, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 120.541
+margin_top = 167.045
+margin_right = 839.541
+margin_bottom = 488.045
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "The game was develop by Aseem Lalfakawma and Jonathan Lalduhsanga, students of Bacherlor of Computer Applications (BCA), 6th Semester at NIELIT, Zuangtui, Aizawl for the Final Year Project 2020. The game was developed using Godot Engine and available exclusively for only android users. All the game designs and music are originally made by and belongs us.
+
+
+credit: Kenny (www.kenney.nl) for the game tilesheet"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
