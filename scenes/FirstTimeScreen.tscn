@@ -21,8 +21,7 @@ font_data = ExtResource( 4 )
 
 [node name="FirstTimeScreen" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [ 269.36 ],
-"_edit_vertical_guides_": [ 479.529 ]
+"_edit_vertical_guides_": [ 480.003 ]
 }
 
 [node name="Overlay" type="TextureRect" parent="."]
@@ -84,10 +83,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 433.665
-margin_top = 293.339
-margin_right = 525.665
-margin_bottom = 331.339
+margin_left = 433.078
+margin_top = 294.926
+margin_right = 525.078
+margin_bottom = 332.926
 custom_fonts/font = SubResource( 3 )
 icon = ExtResource( 5 )
 flat = true

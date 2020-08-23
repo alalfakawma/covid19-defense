@@ -10,6 +10,9 @@ use_filter = true
 font_data = ExtResource( 3 )
 
 [node name="About" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 480.001 ]
+}
 
 [node name="MainLayout" parent="." instance=ExtResource( 1 )]
 
@@ -23,9 +26,9 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "About"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 99.5969
+margin_left = 85.5969
 margin_top = 73.4503
-margin_right = 889.597
+margin_right = 875.597
 margin_bottom = 526.45
 texture = ExtResource( 2 )
 expand = true
@@ -35,12 +38,14 @@ __meta__ = {
 }
 
 [node name="About" type="Label" parent="."]
-margin_left = 452.45
-margin_top = 116.699
-margin_right = 524.45
-margin_bottom = 152.699
+margin_left = 443.768
+margin_top = 97.699
+margin_right = 515.768
+margin_bottom = 133.699
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.00392157, 0.988235, 0.768627, 1 )
 text = "About"
 __meta__ = {
 "_edit_use_anchors_": false
