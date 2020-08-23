@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stage_vairengte.png-2ae397065c2bbc5923bbed3934c215fe.stex"
+path="res://.import/stage2_level3.png-a09770bd27550acec54511442d38d492.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stage_vairengte.png"
-dest_files=[ "res://.import/stage_vairengte.png-2ae397065c2bbc5923bbed3934c215fe.stex" ]
+source_file="res://assets/maps/Stage2/stage2_level3.png"
+dest_files=[ "res://.import/stage2_level3.png-a09770bd27550acec54511442d38d492.stex" ]
 
 [params]
 

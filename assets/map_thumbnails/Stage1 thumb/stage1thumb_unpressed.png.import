@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ic_launcher.png-e765fa501a915544e5468770fab6dbe4.stex"
+path="res://.import/stage1thumb_unpressed.png-a044dfb8d16412eb1f07e82a5cc7765c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/app_icon/ic_launcher.png"
-dest_files=[ "res://.import/ic_launcher.png-e765fa501a915544e5468770fab6dbe4.stex" ]
+source_file="res://assets/map_thumbnails/Stage1 thumb/stage1thumb_unpressed.png"
+dest_files=[ "res://.import/stage1thumb_unpressed.png-a044dfb8d16412eb1f07e82a5cc7765c.stex" ]
 
 [params]
 

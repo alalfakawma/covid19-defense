@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/MainLayout.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/stage_vairengte.png" type="Texture" id=2]
+[ext_resource path="res://assets/map_thumbnails/Stage1 thumb/stage1thumb_unpressed.png" type="Texture" id=2]
 [ext_resource path="res://scripts/StageSelect.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Stage.gd" type="Script" id=4]
 [ext_resource path="res://scripts/StageData.gd" type="Script" id=5]
-[ext_resource path="res://assets/stage_vairengte_black.png" type="Texture" id=6]
+[ext_resource path="res://assets/map_thumbnails/Stage3 thumb/stage3_lock.png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/Atarian/SF Atarian System Extended.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/fonts/Atarian/SF Atarian System Extended Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://assets/start_press.png" type="Texture" id=9]
@@ -13,14 +13,26 @@
 [ext_resource path="res://assets/back.png" type="Texture" id=11]
 [ext_resource path="res://assets/back_press.png" type="Texture" id=12]
 [ext_resource path="res://assets/text_box.png" type="Texture" id=13]
+[ext_resource path="res://assets/fonts/Atarian/SF Atarian System Bold.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/map_thumbnails/Stage1 thumb/stage1thumb_pressed.png" type="Texture" id=15]
+[ext_resource path="res://assets/map_thumbnails/Stage2 thumb/stage2_lock.png" type="Texture" id=16]
+[ext_resource path="res://assets/map_thumbnails/Stage2 thumb/stage2thumb_unpressed.png" type="Texture" id=17]
+[ext_resource path="res://assets/map_thumbnails/Stage2 thumb/stage2thumb_pressed.png" type="Texture" id=18]
+[ext_resource path="res://assets/map_thumbnails/Stage3 thumb/stage3_unpressed.png" type="Texture" id=19]
+[ext_resource path="res://assets/map_thumbnails/Stage3 thumb/stage3_pressed.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
+size = 35
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 30
 use_filter = true
 extra_spacing_char = 2
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 use_filter = true
 extra_spacing_char = 1
 font_data = ExtResource( 7 )
@@ -43,7 +55,9 @@ position = Vector2( 86.987, 283 )
 [node name="Title" parent="MainLayout" index="1"]
 margin_left = 321.564
 margin_right = 643.564
-text = "Stage Select"
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Select Stage"
 
 [node name="StageData" type="VBoxContainer" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -75,7 +89,7 @@ __meta__ = {
 [node name="Name" type="Label" parent="StageData/Content"]
 margin_right = 448.0
 margin_bottom = 30.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.368627, 0.368627, 0.368627, 1 )
 text = "Name"
 __meta__ = {
@@ -86,7 +100,7 @@ __meta__ = {
 margin_top = 70.0
 margin_right = 448.0
 margin_bottom = 87.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.368627, 0.368627, 0.368627, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Description"
@@ -120,13 +134,14 @@ texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
 
 [node name="Vairengte" type="TextureButton" parent="."]
-margin_left = 196.0
-margin_top = 283.0
-margin_right = 556.0
-margin_bottom = 486.0
+margin_left = 356.978
+margin_top = 185.805
+margin_right = 715.978
+margin_bottom = 389.805
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 2 )
-stretch_mode = 1
+texture_pressed = ExtResource( 15 )
+expand = true
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,14 +151,16 @@ __meta__ = {
 position = Vector2( 3.05176e-05, 0 )
 
 [node name="Lengpui" type="TextureButton" parent="."]
-margin_left = 512.359
-margin_top = 283.0
-margin_right = 872.359
-margin_bottom = 486.0
+margin_left = 209.669
+margin_top = 353.706
+margin_right = 564.669
+margin_bottom = 555.706
 rect_scale = Vector2( 0.7, 0.7 )
 disabled = true
-texture_normal = ExtResource( 6 )
-stretch_mode = 1
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_disabled = ExtResource( 16 )
+expand = true
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -151,6 +168,26 @@ __meta__ = {
 stageId = 1
 
 [node name="Position2D" type="Position2D" parent="Lengpui"]
+
+[node name="Aizawl" type="TextureButton" parent="."]
+margin_left = 506.403
+margin_top = 352.972
+margin_right = 866.403
+margin_bottom = 555.972
+rect_scale = Vector2( 0.7, 0.7 )
+disabled = true
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+texture_disabled = ExtResource( 6 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+stageId = 1
+
+[node name="Position2D" type="Position2D" parent="Aizawl"]
 [connection signal="pressed" from="StageData/Content/HBoxContainer/Start" to="." method="_stage_select_start"]
 [connection signal="pressed" from="StageData/Content/HBoxContainer/Back" to="." method="_stage_select_back"]
 

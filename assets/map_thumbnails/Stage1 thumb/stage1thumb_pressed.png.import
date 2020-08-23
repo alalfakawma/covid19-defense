@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stage_vairengte_black.png-70dd25ee5fc4cc7399073d84c82dc215.stex"
+path="res://.import/stage1thumb_pressed.png-eb61769b35277226907eabe4c1ab9e92.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stage_vairengte_black.png"
-dest_files=[ "res://.import/stage_vairengte_black.png-70dd25ee5fc4cc7399073d84c82dc215.stex" ]
+source_file="res://assets/map_thumbnails/Stage1 thumb/stage1thumb_pressed.png"
+dest_files=[ "res://.import/stage1thumb_pressed.png-eb61769b35277226907eabe4c1ab9e92.stex" ]
 
 [params]
 

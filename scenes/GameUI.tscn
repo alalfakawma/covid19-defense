@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/GameUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui_buttons/tower/tower_unpressed.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/gui_buttons/pause/unpressed.png" type="Texture" id=5]
 [ext_resource path="res://assets/gui_buttons/pause/pressed.png" type="Texture" id=6]
 [ext_resource path="res://assets/gui_buttons/forward/unpressed.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/AtarianBold.tres" type="DynamicFont" id=8]
 
 [node name="GameUI" type="Node2D"]
 script = ExtResource( 1 )
@@ -51,10 +52,10 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NonPlaceRender"]
-margin_left = 723.619
-margin_top = 8.58714
-margin_right = 942.619
-margin_bottom = 48.5871
+margin_left = 683.0
+margin_top = 9.0
+margin_right = 943.0
+margin_bottom = 34.0
 custom_constants/separation = 15
 __meta__ = {
 "_edit_group_": true,
@@ -62,19 +63,23 @@ __meta__ = {
 }
 
 [node name="Coins" type="Label" parent="NonPlaceRender/HBoxContainer"]
-margin_top = 12.0
-margin_right = 65.0
-margin_bottom = 26.0
+margin_top = 4.0
+margin_right = 72.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "COINS: 30"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BorderHealth" type="Label" parent="NonPlaceRender/HBoxContainer"]
-margin_left = 80.0
-margin_top = 12.0
-margin_right = 219.0
-margin_bottom = 26.0
+margin_left = 87.0
+margin_top = 4.0
+margin_right = 241.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "BORDER HEALTH: 100"
 __meta__ = {
 "_edit_use_anchors_": false
