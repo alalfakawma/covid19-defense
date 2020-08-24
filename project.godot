@@ -33,8 +33,6 @@ AudioManager="*res://scenes/AudioManager.tscn"
 
 window/size/width=960
 window/size/height=540
-window/size/borderless=true
-window/size/fullscreen=true
 window/dpi/allow_hidpi=true
 window/tablet_driver=""
 window/handheld/orientation="sensor_landscape"
@@ -45,10 +43,6 @@ window/stretch/aspect="keep"
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
-
-[gui]
-
-theme/use_hidpi=true
 
 [input]
 
@@ -65,4 +59,6 @@ touch={
 
 [rendering]
 
+quality/depth/hdr=false
+quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"
