@@ -14,83 +14,83 @@ var virusesInVision = []
 var currentTarget = null
 
 func _ready():
-	$Click.connect("pressed", self, "_upgrade")
-	$TowerUpgradeMenu/Tick.connect("pressed", self, "_upgrade_confirmed")
-	$TowerUpgradeMenu/Close.connect("pressed", self, "_upgrade_cancelled")
-	
-	if not self.menu:
-		$ShootTimer.wait_time = shootSpeed
-		$ShootTimer.connect("timeout", self, "_shoot")
-		$ShootTimer.start()
-	
-	set_tower(tier, level)
-	
-	$TowerUpgradeMenu/Label.text = "Price: %s" % Game.towerData[tier][level + 1].price
+    $Click.connect("pressed", self, "_upgrade")
+    $TowerUpgradeMenu/Tick.connect("pressed", self, "_upgrade_confirmed")
+    $TowerUpgradeMenu/Close.connect("pressed", self, "_upgrade_cancelled")
+    
+    if not self.menu:
+        $ShootTimer.wait_time = shootSpeed
+        $ShootTimer.connect("timeout", self, "_shoot")
+        $ShootTimer.start()
+    
+    set_tower(tier, level)
+    
+    $TowerUpgradeMenu/Label.text = "Price: %s" % Game.towerData[tier][level + 1].price
 
 func _process(delta):
-	if level != 1:
-		if Game.towerData[tier][level + 1].price > Game.coins:
-			$TowerUpgradeMenu/Tick.disabled = true
-		else:
-			$TowerUpgradeMenu/Tick.disabled = false
-	
-	if currentTarget != null:
-		# Look at the target
-		$Gun.look_at(currentTarget.position)
-		canShoot = true
-	else:
-		canShoot = false
+    if level != 1:
+        if Game.towerData[tier][level + 1].price > Game.coins:
+            $TowerUpgradeMenu/Tick.disabled = true
+        else:
+            $TowerUpgradeMenu/Tick.disabled = false
+    
+    if currentTarget != null:
+        # Look at the target
+        $Gun.look_at(currentTarget.position)
+        canShoot = true
+    else:
+        canShoot = false
 
 func set_tower(t, l):
-	tier = t
-	level = l
-	$ViewRadius.shape.radius = Game.towerData[t][l].radius
-	damage = Game.towerData[t][l].damage
-	shootSpeed = Game.towerData[t][l].shootSpeed
-	price = Game.towerData[t][l].price
-	$ShootTimer.wait_time = shootSpeed
-	loadSprites()
-	
+    tier = t
+    level = l
+    $ViewRadius.shape.radius = Game.towerData[t][l].radius
+    damage = Game.towerData[t][l].damage
+    shootSpeed = Game.towerData[t][l].shootSpeed
+    price = Game.towerData[t][l].price
+    $ShootTimer.wait_time = shootSpeed
+    loadSprites()
+    
 func loadSprites():
-	var gun = Game.towerData[tier][level].sprite.gun
-	var base = Game.towerData[tier][level].sprite.base
-	
-	# Set the tower sprites
-	$TowerBase.texture = load(base)
-	$Gun.texture = load(gun)
-	
+    var gun = Game.towerData[tier][level].sprite.gun
+    var base = Game.towerData[tier][level].sprite.base
+    
+    # Set the tower sprites
+    $TowerBase.texture = load(base)
+    $Gun.texture = load(gun)
+    
 func _shoot():
-	if canShoot:
-		var dir = Vector2(1, 0).rotated($Gun.global_rotation)
-		var sprite = load(Game.towerData[tier][level].sprite.bullet)
-		emit_signal("shoot", $Gun/Muzzle.global_position, dir, sprite, damage)
+    if canShoot:
+        var dir = Vector2(1, 0).rotated($Gun.global_rotation)
+        var sprite = load(Game.towerData[tier][level].sprite.bullet)
+        emit_signal("shoot", $Gun/Muzzle.global_position, dir, sprite, damage)
 
 func _on_Tower_area_entered(area):
-	# If not menu towers or bullet (means it is a virus)
-	if not menu:
-		if not "menu" in area and "health" in area:
-			virusesInVision.push_back(area)
-			currentTarget = virusesInVision.front()
+    # If not menu towers or bullet (means it is a virus)
+    if not menu:
+        if not "menu" in area and "health" in area:
+            virusesInVision.push_back(area)
+            currentTarget = virusesInVision.front()
 
 func _on_Tower_area_exited(area):
-	 # If not menu towers or bullet (means it is a virus)
-	if not menu:
-		if not "menu" in area and "health" in area:
-			virusesInVision.remove(virusesInVision.find(area))
-			currentTarget = virusesInVision.front()
+     # If not menu towers or bullet (means it is a virus)
+    if not menu:
+        if not "menu" in area and "health" in area:
+            virusesInVision.remove(virusesInVision.find(area))
+            currentTarget = virusesInVision.front()
 
 func _upgrade():
-	for t in get_parent().get_children():
-		if get_instance_id() != t.get_instance_id():
-			t.get_node("TowerUpgradeMenu").visible = false
-	
-	if level < 1:
-		$TowerUpgradeMenu.visible = true
+    for t in get_parent().get_children():
+        if get_instance_id() != t.get_instance_id():
+            t.get_node("TowerUpgradeMenu").visible = false
+    
+    if level < 1:
+        $TowerUpgradeMenu.visible = true
 
 func _upgrade_confirmed():
-	Game.coins -= Game.towerData[tier][level + 1].price    
-	set_tower(tier, level + 1)
-	$TowerUpgradeMenu.visible = false
+    Game.coins -= Game.towerData[tier][level + 1].price    
+    set_tower(tier, level + 1)
+    $TowerUpgradeMenu.visible = false
 
 func _upgrade_cancelled():
-	$TowerUpgradeMenu.visible = false
+    $TowerUpgradeMenu.visible = false
