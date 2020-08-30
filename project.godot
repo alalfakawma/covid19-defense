@@ -22,7 +22,6 @@ _global_script_class_icons={
 
 config/name="Covid19 Defense"
 run/main_scene="res://scenes/MainMenu.tscn"
-config/icon="res://assets/app_icon/playstore.png"
 
 [autoload]
 
@@ -33,12 +32,7 @@ AudioManager="*res://scenes/AudioManager.tscn"
 
 window/size/width=960
 window/size/height=540
-window/dpi/allow_hidpi=true
-window/tablet_driver=""
-window/handheld/orientation="sensor_landscape"
-window/ios/hide_home_indicator=false
 window/stretch/mode="2d"
-window/stretch/aspect="keep"
 
 [gdnative]
 
@@ -59,6 +53,4 @@ touch={
 
 [rendering]
 
-quality/depth/hdr=false
-quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"

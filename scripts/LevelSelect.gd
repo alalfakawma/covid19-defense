@@ -15,9 +15,9 @@ func _levelButtonPressed(btn):
         Levels.LEVEL1:
             Game.change_scene("res://scenes/stages/%s/Level-1.tscn" % Game.currentStageData.name.to_lower())
         Levels.LEVEL2:
-            print("Level 2")
+            Game.change_scene("res://scenes/stages/%s/Level-2.tscn" % Game.currentStageData.name.to_lower())
         Levels.LEVEL3:
-            print("Level 3")
+            Game.change_scene("res://scenes/stages/%s/Level-3.tscn" % Game.currentStageData.name.to_lower())
 
 func createStageButtons():
     for i in range(Game.currentStageData.missions.size()):
