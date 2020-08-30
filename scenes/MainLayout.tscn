@@ -18,6 +18,7 @@ margin_top = 125.0
 margin_right = 609.564
 margin_bottom = 176.999
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Title"
 align = 1
 valign = 1

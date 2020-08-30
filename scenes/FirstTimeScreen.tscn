@@ -52,6 +52,7 @@ margin_right = 642.826
 margin_bottom = 227.729
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "Welcome To Covid19 Defense"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,6 +65,7 @@ margin_right = 431.89
 margin_bottom = 286.439
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "Enter your name"
 __meta__ = {
 "_edit_use_anchors_": false

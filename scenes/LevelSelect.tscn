@@ -22,6 +22,7 @@ margin_top = 143.018
 margin_right = 618.697
 margin_bottom = 189.018
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Select Level"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
