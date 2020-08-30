@@ -26,11 +26,11 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Select Level"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 280.0
+margin_left = 203.0
 margin_top = 316.0
-margin_right = 680.0
+margin_right = 756.0
 margin_bottom = 356.0
-rect_pivot_offset = Vector2( 200, 20 )
+rect_pivot_offset = Vector2( 277, 20 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
