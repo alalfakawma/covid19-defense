@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Settings.gd" type="Script" id=1]
 [ext_resource path="res://scenes/MainLayout.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/gui_buttons/music/music_on_pressed.png" type="Texture" id=5]
 [ext_resource path="res://assets/mainmenu_unpressed.png" type="Texture" id=6]
 [ext_resource path="res://assets/mainmenu_pressed.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui_buttons/music/sound/soundon_pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/gui_buttons/music/sound/soundon_unpressed.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -52,6 +54,7 @@ margin_left = 456.0
 margin_top = 279.0
 margin_right = 505.0
 margin_bottom = 395.0
+custom_constants/separation = 28
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,6 +64,13 @@ margin_right = 49.0
 margin_bottom = 49.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
+
+[node name="SoundButton" type="TextureButton" parent="VBoxContainer"]
+margin_top = 77.0
+margin_right = 49.0
+margin_bottom = 126.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
 
 [node name="MainMenu" type="TextureButton" parent="."]
 visible = false
@@ -96,5 +106,6 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Sound :"
 [connection signal="pressed" from="VBoxContainer/MusicButton" to="." method="_on_MusicButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/SoundButton" to="." method="_on_SoundButton_pressed"]
 
 [editable path="MainLayout"]

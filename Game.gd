@@ -4,7 +4,7 @@ const START_COINS = 35
 
 onready var firstTimeScreen = load("res://scenes/FirstTimeScreen.tscn")
 var stageData
-var musicOn = true setget set_music
+var soundOn = true setget set_music
 var towerData
 var currentNode
 var currentStageData
@@ -39,7 +39,7 @@ func _ready():
         # Load the files
         playerData = loadFile(filenames.playerData)
         stageData = loadFile(filenames.stageData)
-        musicOn = playerData.soundOn # sound
+        soundOn = playerData.soundOn # sound
         if playerData.name == null:
             var fts = firstTimeScreen.instance()
             self.get_parent().get_node("MainMenu").add_child(fts)
@@ -98,6 +98,6 @@ func _save_name(fts):
         fts.queue_free()
 
 func set_music(v):
-    musicOn = v
-    playerData.soundOn = musicOn
+    soundOn = v
+    playerData.soundOn = soundOn
     saveFile(filenames.playerData, JSON.print(playerData))
