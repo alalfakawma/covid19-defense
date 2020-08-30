@@ -107,6 +107,7 @@ func _gui_input(event, rect):
         get_tree().paused = false
 
 func _tower_shoot(pos, dir, sprite, damage):
+    AudioManager.playAudio("towerAttack")
     var b = bullet.instance()
     b.start(pos, dir, damage)
     b.scale = Vector2(0.6, 0.6)

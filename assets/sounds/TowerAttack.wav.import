@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/TowerSound.wav-c2974e1c9dbc5c41c2e4fcf6b849b885.sample"
+path="res://.import/TowerAttack.wav-8c698320c70601b7085e33f8c00b007d.sample"
 
 [deps]
 
-source_file="res://assets/sounds/TowerSound.wav"
-dest_files=[ "res://.import/TowerSound.wav-c2974e1c9dbc5c41c2e4fcf6b849b885.sample" ]
+source_file="res://assets/sounds/TowerAttack.wav"
+dest_files=[ "res://.import/TowerAttack.wav-8c698320c70601b7085e33f8c00b007d.sample" ]
 
 [params]
 
