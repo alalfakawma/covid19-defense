@@ -13,7 +13,7 @@ texture = ExtResource( 2 )
 [node name="VirusSpawner" parent="Game" index="1"]
 position = Vector2( 32.3474, 247.911 )
 
-[node name="EndPosition" parent="Game" index="3"]
+[node name="EndPosition" parent="Game" index="4"]
 position = Vector2( 960, 249 )
 
 [editable path="Game"]

@@ -10,6 +10,7 @@
                 "minScore": 2000,
                 "waveDelay": 10,
                 "baseHealth": 100,
+                "lanes": 1,
                 "waves": [
                     {
                         "enemyLevel": 1,
@@ -33,14 +34,15 @@
                 "minScore": 3500,
                 "waveDelay": 10,
                 "baseHealth": 100,
+                "lanes": 2,
                 "waves": [
                     {
-                        "enemyLevel": 1,
+                        "enemyLevel": 2,
                         "amount": 10,
                         "dmgMultiplier": 0.75
                     },
                     {
-                        "enemyLevel": 2,
+                        "enemyLevel": 3,
                         "amount": 15,
                         "dmgMultiplier": 0.85
                     }
@@ -51,6 +53,7 @@
                 "minScore": 5000,
                 "baseHealth": 100,
                 "waveDelay": 15,
+                "lanes": 2,
                 "waves": [
                     {
                         "enemyLevel": 3,
@@ -72,6 +75,7 @@
                 "minScore": 3500,
                 "waveDelay": 30,
                 "baseHealth": 100,
+                "lanes": 2,
                 "waves": [
                     {
                         "enemyLevel": 2,

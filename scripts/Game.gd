@@ -16,8 +16,12 @@ var selectedTower setget set_selected_tower
 onready var t_Select = preload("res://scenes/TowerSelect.tscn")
 
 func _ready():
+    mission = (get_parent().name.split("-")[1].to_int() - 1)
+    Game.currentMission = mission
     Game.navPath = $VirusPath.get_simple_path($VirusSpawner.position, $EndPosition.position)
     missionData = Game.currentStageData.missions[mission]
+    if missionData.lanes == 2:
+        Game.navPath2 = $VirusPath2.get_simple_path($VirusSpawner.position, $EndPosition.position)
     
     Game.borderHealth = missionData.baseHealth
     

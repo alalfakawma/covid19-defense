@@ -11,6 +11,14 @@ export(int, "Level 1", "Level 2", "Level 3") var level = 0 setget set_level
 
 func _ready():
     path = Game.navPath
+    
+    if Game.currentStageData.missions[Game.currentMission].lanes == 2:
+        # Choose path
+        if rand_range(0, 100) < 50:
+            path = Game.navPath
+        else:
+            path = Game.navPath2        
+    
     path.remove(0)
     
 func _process(delta):

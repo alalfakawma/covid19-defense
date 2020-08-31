@@ -12,7 +12,8 @@ func _next_mission():
         $Label.text = "Select Stage"
         get_tree().change_scene("res://scenes/StageSelect.tscn")
     else:
-        get_tree().change_scene("res://scenes/Game.tscn")
+        var currentStageName = Game.currentStageData.name.to_lower()
+        get_tree().change_scene("res://scenes/stages/%s/Level-%d.tscn" % [currentStageName, Game.currentMission])
 
 func _main_menu():
     AudioManager.playAudio("buttonClick")

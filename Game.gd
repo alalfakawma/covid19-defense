@@ -11,6 +11,7 @@ var currentStageData
 var sceneHistory = [2, 3]
 var guiTweenDuration = 0.5
 var navPath
+var navPath2
 var currentMission = 0
 var playerData
 var borderHealth = 10

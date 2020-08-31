@@ -13,7 +13,13 @@ texture = ExtResource( 2 )
 [node name="VirusSpawner" parent="Game" index="1"]
 position = Vector2( 32.3474, 244.911 )
 
-[node name="EndPosition" parent="Game" index="3"]
+[node name="VirusPath" parent="Game" index="2"]
+visible = true
+
+[node name="NavTile" parent="Game/VirusPath" index="0"]
+tile_data = PoolIntArray(  )
+
+[node name="EndPosition" parent="Game" index="4"]
 position = Vector2( 960, 257 )
 
 [editable path="Game"]

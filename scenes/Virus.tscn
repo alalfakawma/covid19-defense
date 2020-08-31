@@ -158,6 +158,6 @@ rotation = -1.5708
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 26 )
 animation = "Level 1"
-frame = 3
+frame = 6
 speed_scale = 3.0
 playing = true
