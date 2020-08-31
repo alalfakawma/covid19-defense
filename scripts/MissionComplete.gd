@@ -1,5 +1,9 @@
 extends Node2D
 
+func _ready():
+    $HBoxContainer/NextMission.connect("pressed", self, "_next_mission")
+    $HBoxContainer/MainMenu.connect("pressed", self, "_main_menu")
+
 func _next_mission():
     AudioManager.playAudio("buttonClick")
     Game.currentMission += 1

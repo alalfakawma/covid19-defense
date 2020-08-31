@@ -3,6 +3,8 @@ extends Position2D
 signal wave_depleted
 
 var virus = load("res://scenes/Virus.tscn")
+var virusDeathParticle = preload("res://scenes/Particle.tscn")
+
 var activeViruses = []
 var SPAWN_DELAY = 0.75 # Seconds
 var spawnAmount
@@ -39,6 +41,11 @@ func _spawn_wave(waveData):
     $Timer.start()
 
 func _v_died(v):
+    var virusLastPos = v.position
+    var deathParticle = virusDeathParticle.instance()
+    deathParticle.position = virusLastPos
+    get_parent().add_child(deathParticle)
+    
     # do anything
     removeFromActive(v)
     # Add coins

@@ -23,7 +23,6 @@ func _process(delta):
         emit_signal("died", self)
     
     # Remove the virus if it leaves the game screen
-    # TODO: Apply damage to the player's base here
     if position.x >= get_viewport_rect().size.x:
         queue_free()
         emit_signal("offscreen", self)
